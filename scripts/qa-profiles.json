@@ -1,0 +1,40 @@
+{
+  "defaults": {
+    "blackDetection": {
+      "minimumDurationSeconds": 0.1,
+      "pixelThreshold": 0.1,
+      "allowedIntervals": []
+    },
+    "freezeDetection": {
+      "minimumDurationSeconds": 3,
+      "noise": "-60dB",
+      "allowedIntervals": []
+    },
+    "silenceDetection": {
+      "minimumDurationSeconds": 2,
+      "noise": "-50dB",
+      "allowedIntervals": []
+    },
+    "audioVideoDurationToleranceSeconds": 0.1
+  },
+  "compositions": {
+    "RETProgramStyleProof": {
+      "sceneBoundaryFrames": [120, 210, 450],
+      "freezeDetection": {
+        "allowedIntervals": [
+          {
+            "start": 0,
+            "end": 4,
+            "reason": "The source storyboard intentionally holds the paper background before the opening sequence."
+          }
+        ]
+      }
+    },
+    "MyComp": {
+      "sceneBoundaryFrames": [60, 75]
+    },
+    "NextLogo": {
+      "sceneBoundaryFrames": [30]
+    }
+  }
+}

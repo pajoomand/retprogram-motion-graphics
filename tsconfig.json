@@ -29,5 +29,5 @@
     "remotion/webpack-override.mjs",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "remotion.config.ts"]
+  "exclude": ["node_modules", "out", "remotion.config.ts"]
 }

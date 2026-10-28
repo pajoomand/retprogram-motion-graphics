@@ -11,6 +11,9 @@ repository's [production brief](../AGENTS.md) and [shared design system](../READ
 
 ## Inputs
 
+- Course slug, video slug, and composition IDs: `${input:target:Identify the new video package}`
+- Permitted edit scope: `${input:scope:Default to the new package and its new Root registration; existing videos are out of scope}`
+
 - Approved script: `${input:script:Paste the approved script or excerpt}`
 - Audience and prior knowledge: `${input:audience:Describe intended learners}`
 - Learning objectives: `${input:objectives:List approved learning objectives}`
@@ -21,6 +24,9 @@ repository's [production brief](../AGENTS.md) and [shared design system](../READ
 
 - Preserve the script's scientific and medical meaning; do not invent claims,
   advice, findings, or curriculum details.
+- Save the approved storyboard and script only in the target
+  `src/courses/{course-slug}/{video-slug}/` package. Never replace another
+  video's content to create this one.
 - Give each scene one clear educational concept and a visual metaphor or
   diagram that explains it.
 - Let narration determine scene order and pacing. If audio is unavailable,

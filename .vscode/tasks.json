@@ -1,0 +1,41 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Migration baseline status",
+			"type": "shell",
+			"command": "cmd.exe /d /c \"git --no-pager status --short & git ls-files public out & node --version\"",
+			"problemMatcher": []
+		},
+		{
+			"label": "Capture animation baseline",
+			"type": "shell",
+			"command": "cmd.exe /d /c \"node scripts\\verify-production.mjs baseline\"",
+			"problemMatcher": []
+		},
+		{
+			"label": "Baseline code checks",
+			"type": "shell",
+			"command": "cmd.exe /d /c \"npx tsc --noEmit --incremental false > out\\migration-qa\\baseline-types.log 2>&1 & npm run lint > out\\migration-qa\\baseline-lint.log 2>&1 & npm run build > out\\migration-qa\\baseline-build.log 2>&1\"",
+			"problemMatcher": []
+		},
+		{
+			"label": "Reorganise video source",
+			"type": "shell",
+			"command": "cmd.exe /d /c \"node C:\\Users\\00095981\\.copilot\\session-state\\96a84a8a-8697-4eb9-8485-c1c2921de4f5\\files\\migrate.cjs\"",
+			"problemMatcher": []
+		},
+		{
+			"label": "Complete source reorganisation",
+			"type": "shell",
+			"command": "cmd.exe /d /c \"node C:\\Users\\00095981\\.copilot\\session-state\\96a84a8a-8697-4eb9-8485-c1c2921de4f5\\files\\migrate.cjs --resume\"",
+			"problemMatcher": []
+		},
+		{
+			"label": "Run informed consent QA",
+			"type": "shell",
+			"command": "cmd.exe /d /c \"npm run qa:video -- RETProgramInformedConsent\"",
+			"problemMatcher": []
+		}
+	]
+}

@@ -12,8 +12,11 @@ installed Remotion captions and multimedia skills.
 
 ## Inputs
 
+- Course slug, video slug, and composition ID: `${input:target:Identify the target video package}`
+- Permitted edit scope: `${input:scope:Limit updates to this video's timing, narration, captions, and configuration}`
+
 - Approved script or transcript: `${input:script:Paste or link the approved text}`
-- Narration audio under `public/`: `${input:audio:Provide the project-relative audio path}`
+- Narration audio under `public/courses/{course-slug}/{video-slug}/`: `${input:audio:Provide the project-relative audio path}`
 - Current scene sequence or composition: `${input:sequence:Name the sequence or composition}`
 - Existing caption source: `${input:captions:Provide the caption file or say "not prepared"}`
 
@@ -22,6 +25,8 @@ installed Remotion captions and multimedia skills.
 - Use the actual audio and approved transcript as the source of timing and
   wording. Never fabricate word timings or imply synchronization if the audio
   cannot be accessed.
+- Do not retime other videos or replace shared defaults. Preserve proof-cut
+  timing unless the requested scope explicitly includes that cut.
 - Preserve scientific terminology, punctuation, and the intended meaning.
   Flag differences between audio and approved text for review; do not silently
   rewrite either.

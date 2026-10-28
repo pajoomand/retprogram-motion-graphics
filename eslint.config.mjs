@@ -21,10 +21,18 @@ export default [
       "next-env.d.ts",
       "next.config.js",
       "deploy.mjs",
+      ".agents/**",
+      ".claude/**",
     ],
   },
   // Base JS recommended
   js.configs.recommended,
+  {
+    files: ["scripts/**/*.mjs"],
+    languageOptions: {
+      globals: { process: "readonly", console: "readonly", Buffer: "readonly" },
+    },
+  },
   // TypeScript recommended (non type-checked for speed/simplicity)
   ...tseslint.configs.recommended,
   // Next.js recommended rules applied to app code
@@ -37,7 +45,7 @@ export default [
   },
   // Remotion rules applied only to remotion files
   {
-    files: ["src/remotion/**"],
+    files: ["src/remotion/**", "src/courses/**", "src/shared/**", "src/Root.tsx"],
     ...remotion.flatPlugin,
     rules: {
       ...remotion.flatPlugin.rules,
@@ -45,7 +53,7 @@ export default [
   },
   // Disable all Next.js rules within remotion files
   {
-    files: ["src/remotion/**"],
+    files: ["src/remotion/**", "src/courses/**", "src/shared/**", "src/Root.tsx"],
     rules: {
       ...offNextRules,
     },

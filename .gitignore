@@ -37,3 +37,13 @@ next-env.d.ts
 out/
 .env
 build
+
+# Local production outputs; keep source media under public/courses tracked.
+/renders/
+/tmp/
+/temp/
+/.remotion/
+/public/courses/**/renders/
+/public/courses/**/exports/
+*.tmp
+*.temp

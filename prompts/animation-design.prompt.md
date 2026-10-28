@@ -12,6 +12,9 @@ and applicable installed Remotion Agent Skills.
 
 ## Inputs
 
+- Course slug, video slug, and composition ID: `${input:target:Identify the target video package}`
+- Permitted edit scope: `${input:scope:Name allowed files; existing videos and shared defaults are protected unless explicitly approved}`
+
 - Approved scene and concept: `${input:scene:Describe one concept}`
 - Supporting script/narration phrase: `${input:source:Paste the approved source phrase}`
 - Existing component or composition: `${input:component:Name a file or say "new scene"}`
@@ -21,6 +24,9 @@ and applicable installed Remotion Agent Skills.
 
 - Do not add scientific statements or visual implications absent from the
   approved source.
+- Use `src/courses/{course-slug}/{video-slug}/scenes/` for the target scene,
+  its dedicated `public/courses/{course-slug}/{video-slug}/` media namespace,
+  and reusable components from `src/shared/`. Do not modify another video.
 - Communicate one concept through a diagram, illustration, connected system,
   callout, or meaningful visual metaphor; avoid slide-like bullet reveals and
   arbitrary movement.

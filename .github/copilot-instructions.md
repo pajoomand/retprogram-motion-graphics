@@ -1,0 +1,4 @@
+- The user is on a Windows environment where PowerShell is strictly blocked by corporate security policy.
+- NEVER suggest, write, or use PowerShell commands, syntax, or scripts.
+- Always provide command-line instructions using standard Windows Command Prompt (cmd.exe) syntax or Batch scripts (.bat/.cmd).
+- Use traditional CMD tools (e.g., `set`, `dir`, `move`, `curl`, `findstr`) instead of PowerShell aliases.

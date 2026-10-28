@@ -13,6 +13,9 @@ frames where available.
 
 ## Inputs
 
+- Course slug and video slug: `${input:target:Identify the video package}`
+- Permitted scope: `${input:scope:Review-only by default; name any explicitly authorised fixes}`
+
 - Composition ID and source path: `${input:composition:Identify the composition}`
 - Approved script: `${input:script:Provide the source or say "not supplied"}`
 - Narration asset and transcript: `${input:audio:Provide paths or say "not supplied"}`
@@ -34,6 +37,10 @@ frames where available.
   comprehension are adequate.
 - **Technical quality:** composition is 1920×1080 at 30 fps; inspect clipping,
   spacing, easing, visual continuity, transitions, and render defects.
+- **Isolation:** IDs are unique, source/media paths match the target package,
+  shared code does not import course content, and other videos are unchanged.
+  Compare existing compositions against a pre-change baseline when shared
+  code or structure changes. Preserve intentionally different legacy formats.
 
 ## Output
 
