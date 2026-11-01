@@ -1,0 +1,786 @@
+{
+  "status": "Machine transcription and acoustic boundary analysis; not human-verified or medically approved",
+  "method": "Local whisper.cpp b5454, small.en model; FFmpeg silencedetect -35dB, minimum 0.15 seconds",
+  "source": "public/audio/cci-health-innovation/section-01/s01-slide01-temp-narration.mp3",
+  "sha256": "6863e2feb894a83cf153aeb9bb45c971b368c30f0b99dc08368fa01700e78dff",
+  "ffprobeDurationSeconds": 39.31425,
+  "decodedDurationSeconds": 39.314286,
+  "fps": 30,
+  "durationInFrames": 1180,
+  "cueMethod": "Whisper identifies spoken phrases; measured end-of-silence refines phrase onsets. Nearest video frame.",
+  "cues": [
+    {
+      "phrase": "A clinician",
+      "seconds": 5.208685,
+      "frame": 156
+    },
+    {
+      "phrase": "An innovator or developer",
+      "seconds": 9.357891,
+      "frame": 281
+    },
+    {
+      "phrase": "A funder or purchaser",
+      "seconds": 15.2761,
+      "frame": 458
+    },
+    {
+      "phrase": "People who live with a health condition",
+      "seconds": 20.903696,
+      "frame": 627
+    },
+    {
+      "phrase": "These perspectives matter",
+      "seconds": 27.341565,
+      "frame": 820
+    },
+    {
+      "phrase": "Consumer involvement",
+      "seconds": 30.339909,
+      "frame": 910
+    },
+    {
+      "phrase": "into the decisions being made",
+      "seconds": 35.24,
+      "frame": 1057
+    }
+  ],
+  "segments": [
+    {
+      "text": "Health innovations are developed by people",
+      "startMs": 0,
+      "endMs": 2200,
+      "tokens": [
+        {
+          "text": " Health",
+          "startMs": 100,
+          "endMs": 330,
+          "confidence": 0.978399
+        },
+        {
+          "text": " innovations",
+          "startMs": 330,
+          "endMs": 950,
+          "confidence": 0.988246
+        },
+        {
+          "text": " are",
+          "startMs": 950,
+          "endMs": 1110,
+          "confidence": 0.996248
+        },
+        {
+          "text": " developed",
+          "startMs": 1110,
+          "endMs": 1510,
+          "confidence": 0.998439
+        },
+        {
+          "text": " by",
+          "startMs": 1690,
+          "endMs": 1800,
+          "confidence": 0.948811
+        },
+        {
+          "text": " people",
+          "startMs": 1800,
+          "endMs": 2200,
+          "confidence": 0.982632
+        }
+      ]
+    },
+    {
+      "text": "with different kinds of knowledge and expertise.",
+      "startMs": 2200,
+      "endMs": 5240,
+      "tokens": [
+        {
+          "text": " with",
+          "startMs": 2300,
+          "endMs": 2440,
+          "confidence": 0.999786
+        },
+        {
+          "text": " different",
+          "startMs": 2520,
+          "endMs": 3080,
+          "confidence": 0.999866
+        },
+        {
+          "text": " kinds",
+          "startMs": 3090,
+          "endMs": 3430,
+          "confidence": 0.999123
+        },
+        {
+          "text": " of",
+          "startMs": 3430,
+          "endMs": 3560,
+          "confidence": 0.998138
+        },
+        {
+          "text": " knowledge",
+          "startMs": 3560,
+          "endMs": 4180,
+          "confidence": 0.999779
+        },
+        {
+          "text": " and",
+          "startMs": 4180,
+          "endMs": 4380,
+          "confidence": 0.991779
+        },
+        {
+          "text": " expertise",
+          "startMs": 4380,
+          "endMs": 5000,
+          "confidence": 0.99943
+        },
+        {
+          "text": ".",
+          "startMs": 5060,
+          "endMs": 5240,
+          "confidence": 0.991637
+        }
+      ]
+    },
+    {
+      "text": "A clinician may understand treatment options",
+      "startMs": 5240,
+      "endMs": 7560,
+      "tokens": [
+        {
+          "text": " A",
+          "startMs": 5300,
+          "endMs": 5300,
+          "confidence": 0.999767
+        },
+        {
+          "text": " clin",
+          "startMs": 5340,
+          "endMs": 5480,
+          "confidence": 0.999117
+        },
+        {
+          "text": "ician",
+          "startMs": 5560,
+          "endMs": 5840,
+          "confidence": 0.999945
+        },
+        {
+          "text": " may",
+          "startMs": 5840,
+          "endMs": 6010,
+          "confidence": 0.996888
+        },
+        {
+          "text": " understand",
+          "startMs": 6020,
+          "endMs": 6640,
+          "confidence": 0.999089
+        },
+        {
+          "text": " treatment",
+          "startMs": 6640,
+          "endMs": 7040,
+          "confidence": 0.945017
+        },
+        {
+          "text": " options",
+          "startMs": 7040,
+          "endMs": 7550,
+          "confidence": 0.964729
+        }
+      ]
+    },
+    {
+      "text": "and clinical outcomes.",
+      "startMs": 7560,
+      "endMs": 9280,
+      "tokens": [
+        {
+          "text": " and",
+          "startMs": 7660,
+          "endMs": 7790,
+          "confidence": 0.999825
+        },
+        {
+          "text": " clinical",
+          "startMs": 7790,
+          "endMs": 8410,
+          "confidence": 0.999424
+        },
+        {
+          "text": " outcomes",
+          "startMs": 8410,
+          "endMs": 9030,
+          "confidence": 0.998414
+        },
+        {
+          "text": ".",
+          "startMs": 9030,
+          "endMs": 9280,
+          "confidence": 0.863105
+        }
+      ]
+    },
+    {
+      "text": "An innovator or developer may understand",
+      "startMs": 9280,
+      "endMs": 12000,
+      "tokens": [
+        {
+          "text": " An",
+          "startMs": 9380,
+          "endMs": 9450,
+          "confidence": 0.967571
+        },
+        {
+          "text": " innov",
+          "startMs": 9450,
+          "endMs": 9890,
+          "confidence": 0.996434
+        },
+        {
+          "text": "ator",
+          "startMs": 9890,
+          "endMs": 10240,
+          "confidence": 0.999592
+        },
+        {
+          "text": " or",
+          "startMs": 10240,
+          "endMs": 10410,
+          "confidence": 0.97105
+        },
+        {
+          "text": " developer",
+          "startMs": 10410,
+          "endMs": 11240,
+          "confidence": 0.983535
+        },
+        {
+          "text": " may",
+          "startMs": 11240,
+          "endMs": 11410,
+          "confidence": 0.754706
+        },
+        {
+          "text": " understand",
+          "startMs": 11410,
+          "endMs": 12000,
+          "confidence": 0.999159
+        }
+      ]
+    },
+    {
+      "text": "what is technically possible and the potential value.",
+      "startMs": 12000,
+      "endMs": 15240,
+      "tokens": [
+        {
+          "text": " what",
+          "startMs": 12100,
+          "endMs": 12230,
+          "confidence": 0.999866
+        },
+        {
+          "text": " is",
+          "startMs": 12230,
+          "endMs": 12340,
+          "confidence": 0.999382
+        },
+        {
+          "text": " technically",
+          "startMs": 12340,
+          "endMs": 12960,
+          "confidence": 0.999062
+        },
+        {
+          "text": " possible",
+          "startMs": 13030,
+          "endMs": 13440,
+          "confidence": 0.999523
+        },
+        {
+          "text": " and",
+          "startMs": 13440,
+          "endMs": 13490,
+          "confidence": 0.89555
+        },
+        {
+          "text": " the",
+          "startMs": 13690,
+          "endMs": 13840,
+          "confidence": 0.99811
+        },
+        {
+          "text": " potential",
+          "startMs": 13900,
+          "endMs": 14600,
+          "confidence": 0.999886
+        },
+        {
+          "text": " value",
+          "startMs": 14700,
+          "endMs": 14990,
+          "confidence": 0.999752
+        },
+        {
+          "text": ".",
+          "startMs": 14990,
+          "endMs": 15240,
+          "confidence": 0.993648
+        }
+      ]
+    },
+    {
+      "text": "A funder or purchaser may be considering cost,",
+      "startMs": 15240,
+      "endMs": 18400,
+      "tokens": [
+        {
+          "text": " A",
+          "startMs": 15330,
+          "endMs": 15330,
+          "confidence": 0.999478
+        },
+        {
+          "text": " f",
+          "startMs": 15340,
+          "endMs": 15420,
+          "confidence": 0.981535
+        },
+        {
+          "text": "under",
+          "startMs": 15420,
+          "endMs": 15880,
+          "confidence": 0.994786
+        },
+        {
+          "text": " or",
+          "startMs": 15880,
+          "endMs": 16060,
+          "confidence": 0.979294
+        },
+        {
+          "text": " purchaser",
+          "startMs": 16060,
+          "endMs": 16780,
+          "confidence": 0.995025
+        },
+        {
+          "text": " may",
+          "startMs": 16930,
+          "endMs": 17070,
+          "confidence": 0.844679
+        },
+        {
+          "text": " be",
+          "startMs": 17170,
+          "endMs": 17170,
+          "confidence": 0.998851
+        },
+        {
+          "text": " considering",
+          "startMs": 17170,
+          "endMs": 17760,
+          "confidence": 0.990979
+        },
+        {
+          "text": " cost",
+          "startMs": 17760,
+          "endMs": 18390,
+          "confidence": 0.74292
+        },
+        {
+          "text": ",",
+          "startMs": 18400,
+          "endMs": 18400,
+          "confidence": 0.975305
+        }
+      ]
+    },
+    {
+      "text": "implementation and impact.",
+      "startMs": 18400,
+      "endMs": 20840,
+      "tokens": [
+        {
+          "text": " implementation",
+          "startMs": 18500,
+          "endMs": 19660,
+          "confidence": 0.999489
+        },
+        {
+          "text": " and",
+          "startMs": 19720,
+          "endMs": 19910,
+          "confidence": 0.548195
+        },
+        {
+          "text": " impact",
+          "startMs": 19990,
+          "endMs": 20550,
+          "confidence": 0.999691
+        },
+        {
+          "text": ".",
+          "startMs": 20550,
+          "endMs": 20740,
+          "confidence": 0.9987
+        }
+      ]
+    },
+    {
+      "text": "People who live with a health condition",
+      "startMs": 20840,
+      "endMs": 22720,
+      "tokens": [
+        {
+          "text": " People",
+          "startMs": 20940,
+          "endMs": 21180,
+          "confidence": 0.999354
+        },
+        {
+          "text": " who",
+          "startMs": 21180,
+          "endMs": 21330,
+          "confidence": 0.999272
+        },
+        {
+          "text": " live",
+          "startMs": 21370,
+          "endMs": 21520,
+          "confidence": 0.999508
+        },
+        {
+          "text": " with",
+          "startMs": 21520,
+          "endMs": 21790,
+          "confidence": 0.999245
+        },
+        {
+          "text": " a",
+          "startMs": 21790,
+          "endMs": 21840,
+          "confidence": 0.994131
+        },
+        {
+          "text": " health",
+          "startMs": 21870,
+          "endMs": 22180,
+          "confidence": 0.998971
+        },
+        {
+          "text": " condition",
+          "startMs": 22180,
+          "endMs": 22650,
+          "confidence": 0.999695
+        }
+      ]
+    },
+    {
+      "text": "or care for someone who does",
+      "startMs": 22720,
+      "endMs": 24560,
+      "tokens": [
+        {
+          "text": " or",
+          "startMs": 22820,
+          "endMs": 22880,
+          "confidence": 0.999832
+        },
+        {
+          "text": " care",
+          "startMs": 22880,
+          "endMs": 23190,
+          "confidence": 0.999645
+        },
+        {
+          "text": " for",
+          "startMs": 23190,
+          "endMs": 23400,
+          "confidence": 0.999146
+        },
+        {
+          "text": " someone",
+          "startMs": 23420,
+          "endMs": 23980,
+          "confidence": 0.999317
+        },
+        {
+          "text": " who",
+          "startMs": 23980,
+          "endMs": 24210,
+          "confidence": 0.998864
+        },
+        {
+          "text": " does",
+          "startMs": 24210,
+          "endMs": 24530,
+          "confidence": 0.999615
+        }
+      ]
+    },
+    {
+      "text": "understand how it affects daily life.",
+      "startMs": 24560,
+      "endMs": 27280,
+      "tokens": [
+        {
+          "text": " understand",
+          "startMs": 24660,
+          "endMs": 25320,
+          "confidence": 0.999184
+        },
+        {
+          "text": " how",
+          "startMs": 25350,
+          "endMs": 25570,
+          "confidence": 0.99968
+        },
+        {
+          "text": " it",
+          "startMs": 25590,
+          "endMs": 25720,
+          "confidence": 0.999695
+        },
+        {
+          "text": " affects",
+          "startMs": 25760,
+          "endMs": 26300,
+          "confidence": 0.985872
+        },
+        {
+          "text": " daily",
+          "startMs": 26300,
+          "endMs": 26700,
+          "confidence": 0.999683
+        },
+        {
+          "text": " life",
+          "startMs": 26700,
+          "endMs": 26900,
+          "confidence": 0.999687
+        },
+        {
+          "text": ".",
+          "startMs": 27060,
+          "endMs": 27280,
+          "confidence": 0.998275
+        }
+      ]
+    },
+    {
+      "text": "These perspectives matter for different reasons.",
+      "startMs": 27280,
+      "endMs": 30240,
+      "tokens": [
+        {
+          "text": " These",
+          "startMs": 27380,
+          "endMs": 27520,
+          "confidence": 0.99798
+        },
+        {
+          "text": " perspectives",
+          "startMs": 27600,
+          "endMs": 28380,
+          "confidence": 0.996818
+        },
+        {
+          "text": " matter",
+          "startMs": 28380,
+          "endMs": 28770,
+          "confidence": 0.999436
+        },
+        {
+          "text": " for",
+          "startMs": 28770,
+          "endMs": 28770,
+          "confidence": 0.998982
+        },
+        {
+          "text": " different",
+          "startMs": 28970,
+          "endMs": 29540,
+          "confidence": 0.999699
+        },
+        {
+          "text": " reasons",
+          "startMs": 29550,
+          "endMs": 30010,
+          "confidence": 0.999516
+        },
+        {
+          "text": ".",
+          "startMs": 30010,
+          "endMs": 30240,
+          "confidence": 0.992337
+        }
+      ]
+    },
+    {
+      "text": "Consumer involvement deliberately brings",
+      "startMs": 30240,
+      "endMs": 32520,
+      "tokens": [
+        {
+          "text": " Consumer",
+          "startMs": 30340,
+          "endMs": 30730,
+          "confidence": 0.992153
+        },
+        {
+          "text": " involvement",
+          "startMs": 30770,
+          "endMs": 31480,
+          "confidence": 0.992169
+        },
+        {
+          "text": " deliberately",
+          "startMs": 31480,
+          "endMs": 32050,
+          "confidence": 0.937866
+        },
+        {
+          "text": " brings",
+          "startMs": 32140,
+          "endMs": 32520,
+          "confidence": 0.893376
+        }
+      ]
+    },
+    {
+      "text": "relevant lived experience and expertise",
+      "startMs": 32520,
+      "endMs": 35240,
+      "tokens": [
+        {
+          "text": " relevant",
+          "startMs": 32620,
+          "endMs": 33140,
+          "confidence": 0.998399
+        },
+        {
+          "text": " lived",
+          "startMs": 33140,
+          "endMs": 33480,
+          "confidence": 0.935262
+        },
+        {
+          "text": " experience",
+          "startMs": 33550,
+          "endMs": 34290,
+          "confidence": 0.997143
+        },
+        {
+          "text": " and",
+          "startMs": 34290,
+          "endMs": 34520,
+          "confidence": 0.989991
+        },
+        {
+          "text": " expertise",
+          "startMs": 34520,
+          "endMs": 35240,
+          "confidence": 0.998233
+        }
+      ]
+    },
+    {
+      "text": "into the decisions being made",
+      "startMs": 35240,
+      "endMs": 36840,
+      "tokens": [
+        {
+          "text": " into",
+          "startMs": 35340,
+          "endMs": 35480,
+          "confidence": 0.998197
+        },
+        {
+          "text": " the",
+          "startMs": 35560,
+          "endMs": 35680,
+          "confidence": 0.998007
+        },
+        {
+          "text": " decisions",
+          "startMs": 35680,
+          "endMs": 36200,
+          "confidence": 0.998731
+        },
+        {
+          "text": " being",
+          "startMs": 36270,
+          "endMs": 36570,
+          "confidence": 0.998624
+        },
+        {
+          "text": " made",
+          "startMs": 36570,
+          "endMs": 36750,
+          "confidence": 0.999266
+        }
+      ]
+    },
+    {
+      "text": "throughout the development of a health innovation.",
+      "startMs": 36840,
+      "endMs": 39280,
+      "tokens": [
+        {
+          "text": " throughout",
+          "startMs": 36940,
+          "endMs": 37330,
+          "confidence": 0.993104
+        },
+        {
+          "text": " the",
+          "startMs": 37370,
+          "endMs": 37520,
+          "confidence": 0.998544
+        },
+        {
+          "text": " development",
+          "startMs": 37520,
+          "endMs": 38100,
+          "confidence": 0.999703
+        },
+        {
+          "text": " of",
+          "startMs": 38160,
+          "endMs": 38200,
+          "confidence": 0.996345
+        },
+        {
+          "text": " a",
+          "startMs": 38200,
+          "endMs": 38250,
+          "confidence": 0.990975
+        },
+        {
+          "text": " health",
+          "startMs": 38250,
+          "endMs": 38560,
+          "confidence": 0.994987
+        },
+        {
+          "text": " innovation",
+          "startMs": 38560,
+          "endMs": 39080,
+          "confidence": 0.998639
+        },
+        {
+          "text": ".",
+          "startMs": 39090,
+          "endMs": 39180,
+          "confidence": 0.997729
+        }
+      ]
+    }
+  ]
+}

@@ -2,6 +2,28 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "CCI Slide 1 QA",
+			"type": "process",
+			"command": "cmd.exe",
+			"args": ["/d", "/c", "npm run qa:video -- CCIHealthInnovation-S01-Slide01"],
+			"problemMatcher": []
+		},
+		{
+			"label": "CCI clean export with caption assets",
+			"type": "process",
+			"command": "cmd.exe",
+			"args": ["/d", "/c", "npm run export:video -- CCIHealthInnovation-S01-Slide01 out\\exports\\CCIHealthInnovation-S01-Slide01.mp4"],
+			"problemMatcher": []
+		},
+		{
+			"label": "CCI Remotion Studio",
+			"type": "process",
+			"command": "cmd.exe",
+			"args": ["/d", "/c", "npm run studio:qa"],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
 			"label": "Migration baseline status",
 			"type": "shell",
 			"command": "cmd.exe /d /c \"git --no-pager status --short & git ls-files public out & node --version\"",

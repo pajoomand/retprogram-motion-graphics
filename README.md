@@ -33,6 +33,7 @@ remain provisional because no narration recording has been provided.
 
 | Course folder | Video package | Composition IDs |
 |---|---|---|
+| `cci-health-innovation` | `section-01-slide-01` | `CCIHealthInnovation-S01-Slide01` |
 | `good-clinical-practice` | `understanding-informed-consent` | `RETProgramInformedConsent`, `RETProgramInformedConsentProof` |
 | `retprogram-brand` | `style-proof` | `RETProgramStyleProof` |
 | `examples` | `my-comp`, `next-logo` | `MyComp`, `NextLogo` |
@@ -41,6 +42,56 @@ Proof and full informed-consent cuts intentionally share one package and media
 namespace, with separate entry components, timing, and caption literals.
 Brand and examples are organisational namespaces, not approved training courses.
 All five legacy IDs, default formats, and compatibility imports are retained.
+
+### CCI in Health Innovation - Slide 1 prototype
+
+`CCIHealthInnovation-S01-Slide01` is the complete narration-led production
+prototype for "One health problem, different perspectives." Its supplied
+temporary recording measures **39.314250 seconds**; the composition is
+**1180 frames / 39.333333 seconds** at 1920 x 1080, 30 fps. There is less than
+one frame of rounding and no arbitrary 40-second duration or added silent tail.
+
+Four relevant perspectives contribute different forms of knowledge and
+expertise; the diagram does not assert equal relevance for every decision.
+Lived experience receives restrained focus while all contributions remain.
+Typography uses 14-frame, 10 px ease-out fade-ups. Opening lines stagger by
+5 frames; the two payoff lines stagger by 6 frames. The refined final graphic
+settles at 35.9 seconds and holds through the unchanged narration-led ending.
+
+**Human visually approved on 2026-10-29**, including the refined typography
+and reviewed static intervals. These are the current CCI typography-motion
+standards, not changes to legacy RETProgram defaults. Preserve the intentional
+final 3-4 second completed-message hold. Static holds may support comprehension;
+do not add continuous or decorative ambient motion to clear static warnings.
+For future CCI work, avoid unnecessarily long stagnant sections by using
+meaningful narration-synchronised secondary reveals, connector drawing,
+emphasis changes or information progression. Visual approval does not constitute
+transcript, scientific-content or medical approval.
+
+See the package's [storyboard and reuse guide](src/courses/cci-health-innovation/section-01-slide-01/storyboard.md),
+[temporary transcript](src/courses/cci-health-innovation/section-01-slide-01/narration-script.md),
+and [audio timing evidence](src/courses/cci-health-innovation/section-01-slide-01/audio-analysis.json).
+Caption text/timing comes from local machine transcription and acoustic
+analysis of the supplied audio; it still needs human transcript review.
+The MP4 is **caption-free** by default (`showCaptions: false`). The validated
+export writes matching `.vtt` closed captions and a plain `.txt` narration
+transcript alongside the MP4. Upload the MP4 into Rise 360, then add the
+matching WebVTT file using its closed-caption controls and select English.
+Captions can be enabled in Studio for review, but the final sidecar export
+rejects burned-in captions. All three assets share the same filename stem.
+The optional Studio overlay and exporter read one canonical
+[caption JSON](public/courses/cci-health-innovation/section-01-slide-01/closed-captions.json);
+edit that file rather than maintaining a second transcript/timing array.
+The CCI QA profile uses PNG source frames and BT.709 video colour conversion
+for faithful browser playback; legacy compositions retain their render settings.
+The CCI theme/components retain this approved opt-in visual baseline; existing videos
+and theme defaults are unchanged. Slides 2-7 are not implemented.
+
+```cmd
+npm run remotion
+npm run qa:video -- CCIHealthInnovation-S01-Slide01
+npm run export:video -- CCIHealthInnovation-S01-Slide01 out\exports\CCIHealthInnovation-S01-Slide01.mp4
+```
 
 ## Installation
 
@@ -105,9 +156,10 @@ npx remotion compositions
 
 ## Automated video quality assurance
 
-Playwright checks the Remotion Studio preview. Remotion's bundled FFmpeg and
-FFprobe inspect rendered video, so a separate system or npm FFmpeg install is
-not required. After `npm ci`, install Playwright's Chromium browser once:
+Playwright checks the Remotion Studio preview and assembles labelled contact
+sheets locally. Remotion's bundled FFmpeg and FFprobe inspect rendered video,
+so a separate system or npm FFmpeg install is not required. After `npm ci`,
+install Playwright's Chromium browser once:
 
 ```cmd
 npx playwright install chromium
@@ -138,9 +190,17 @@ scene boundary. Boundaries are derived from `sceneDurations`; exceptional
 offsets are declared in `scripts/qa-profiles.json`.
 
 FFprobe verifies the video stream, H.264 codec, dimensions, frame rate, expected
-duration, optional audio codec, and audio/video duration alignment. FFmpeg
-decodes the complete MP4 and detects black intervals, static sequences, and
-silence when audio exists. Intentional holds and pauses can be allow-listed in
+duration, optional audio codec, and audio/video duration alignment. Bundled
+FFmpeg decodes **every** video frame to 160 x 90 RGB for black/static screening,
+and runs its silence detector when audio exists. This avoids optional `tile`,
+`blackdetect` and `freezedetect` filters absent from the bundled Windows build.
+Black screening requires at least 98% of thumbnail pixels below the configured
+luminance threshold; static screening uses anchored mean RGB differences at the
+configured dB threshold. These are thumbnail screening measurements, not
+pixel-exact equivalents of FFmpeg's optional filters or subjective visual
+approval. The report records the method explicitly. Synthetic threshold tests
+run with `node --test scripts\video-qa-media.test.mjs`.
+Intentional holds and pauses can be allow-listed in
 the QA profile. Freeze and silence detections remain review warnings because
 static scenes and pauses may be intentional; they are not automatically treated
 as defects. No narration is currently supplied for the informed-consent video,

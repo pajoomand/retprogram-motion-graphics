@@ -15,6 +15,8 @@ import {
   renderMedia,
 } from "@remotion/renderer";
 import { webpackOverride } from "../src/remotion/webpack-override.mjs";
+import { createContactSheet, scanVideoFrames } from "./video-qa-media.mjs";
+import { prepareCaptionAssets, writeCaptionAssets } from "./caption-assets.mjs";
 
 const root = process.cwd();
 const remotionCli = path.resolve(
@@ -427,32 +429,21 @@ async function renderPreview(composition, serveUrl, directory, report) {
 
   sampledFrames.sort((a, b) => a.frame - b.frame);
   const columns = Math.min(4, sampledFrames.length);
-  const rows = Math.ceil(sampledFrames.length / columns);
   const contactSheetPath = path.join(directory, "contact-sheet.png");
-  const contactSheet = runCli(remotionCli, [
-    "ffmpeg",
-    "-hide_banner",
-    "-loglevel",
-    "error",
-    "-y",
-    "-framerate",
-    "1",
-    "-start_number",
-    "0",
-    "-i",
-    path.join(framesDirectory, "sample-%03d.png"),
-    "-vf",
-    `scale=480:-2,tile=layout=${columns}x${rows}`,
-    "-frames:v",
-    "1",
-    contactSheetPath,
-  ]);
-  if (contactSheet.status !== 0) {
+  try {
+    await createContactSheet(sampledFrames, contactSheetPath, root);
+    addCheck(
+      report,
+      "render.contact-sheet",
+      "passed",
+      `Created a ${columns}-column labelled contact sheet from ${sampledFrames.length} sampled frames using local Chromium.`,
+    );
+  } catch (error) {
     addCheck(
       report,
       "render.contact-sheet",
       "failed",
-      contactSheet.stderr || "FFmpeg could not create the contact sheet.",
+      error instanceof Error ? error.message : String(error),
       "Contact-sheet image pipeline.",
     );
     addIssue(
@@ -460,14 +451,7 @@ async function renderPreview(composition, serveUrl, directory, report) {
       "render.contact-sheet",
       "error",
       "Contact sheet generation failed.",
-      "FFmpeg tile filter or sampled frame images.",
-    );
-  } else {
-    addCheck(
-      report,
-      "render.contact-sheet",
-      "passed",
-      `Created a ${columns}-column contact sheet from ${sampledFrames.length} sampled frames.`,
+      "Playwright Chromium installation or sampled frame images.",
     );
   }
 
@@ -478,7 +462,8 @@ async function renderPreview(composition, serveUrl, directory, report) {
       serveUrl,
       codec: "h264",
       audioCodec: "aac",
-      imageFormat: "jpeg",
+      imageFormat: profile.renderImageFormat ?? "jpeg",
+      colorSpace: profile.colorSpace ?? "default",
       concurrency: 4,
       inputProps: composition.defaultProps ?? {},
       outputLocation: videoPath,
@@ -540,19 +525,6 @@ function parseRate(rate) {
   }
   const [numerator, denominator] = rate.split("/").map(Number);
   return denominator ? numerator / denominator : null;
-}
-
-function parseBlackIntervals(log) {
-  return Array.from(
-    log.matchAll(
-      /black_start:\s*([-\d.]+)\s+black_end:\s*([-\d.]+)\s+black_duration:\s*([-\d.]+)/g,
-    ),
-    (match) => ({
-      start: Number(match[1]),
-      end: Number(match[2]),
-      duration: Number(match[3]),
-    }),
-  );
 }
 
 function parseFilterIntervals(log, prefix, totalDuration) {
@@ -860,34 +832,29 @@ async function checkRenderedVideo(composition, directory, report) {
     );
   }
 
-  const black = remotionFilter([
-    "-i",
-    videoPath,
-    "-vf",
-    `blackdetect=d=${profile.blackDetection.minimumDurationSeconds}:pix_th=${profile.blackDetection.pixelThreshold}`,
-    "-an",
-    "-c:v",
-    "libx264",
-    "-preset",
-    "ultrafast",
-    "-crf",
-    "40",
-    "-f",
-    "null",
-    "-",
-  ]);
-  if (black.status !== 0) {
+  let scan;
+  try {
+    scan = await scanVideoFrames({
+      videoPath,
+      directory,
+      fps: composition.fps,
+      expectedFrames: composition.durationInFrames,
+      profile,
+      runFfmpeg: remotionFilter,
+    });
+    addCheck(report, "media.frame-screening", "passed", scan.method);
+  } catch (error) {
     addCheck(
       report,
-      "video.black-detection",
+      "media.frame-screening",
       "failed",
-      black.stderr || "FFmpeg black-frame detection failed.",
-      "Video filter or encoded file.",
+      error instanceof Error ? error.message : String(error),
+      "Bundled FFmpeg raw RGB decode or frame analysis.",
     );
-  } else {
-    const intervals = parseBlackIntervals(
-      `${black.stdout}\n${black.stderr}`,
-    ).filter(
+    return;
+  }
+  {
+    const intervals = scan.black.filter(
       (interval) =>
         interval.duration >= profile.blackDetection.minimumDurationSeconds,
     );
@@ -920,36 +887,8 @@ async function checkRenderedVideo(composition, directory, report) {
     );
   }
 
-  const freeze = remotionFilter([
-    "-i",
-    videoPath,
-    "-vf",
-    `freezedetect=n=${profile.freezeDetection.noise}:d=${profile.freezeDetection.minimumDurationSeconds}`,
-    "-an",
-    "-c:v",
-    "libx264",
-    "-preset",
-    "ultrafast",
-    "-crf",
-    "40",
-    "-f",
-    "null",
-    "-",
-  ]);
-  if (freeze.status !== 0) {
-    addCheck(
-      report,
-      "video.freeze-detection",
-      "failed",
-      freeze.stderr || "FFmpeg freeze detection failed.",
-      "Video filter or encoded file.",
-    );
-  } else {
-    const intervals = parseFilterIntervals(
-      `${freeze.stdout}\n${freeze.stderr}`,
-      "freeze",
-      actualDuration,
-    ).filter(
+  {
+    const intervals = scan.freeze.filter(
       (interval) =>
         interval.duration >= profile.freezeDetection.minimumDurationSeconds,
     );
@@ -1030,6 +969,7 @@ function reportMarkdown(report) {
 - **Output:** ${report.render.output ? `[MP4](../../../../${report.render.output})` : "Not rendered"}
 - **Specifications:** ${report.render.width}×${report.render.height} at ${report.render.fps} fps, ${report.render.expectedDurationSeconds.toFixed(2)} seconds; expected H.264 video.
 - **Narration:** ${report.render.narrationSrc ?? "Not supplied; audio-specific checks are not applicable."}
+${report.captionExports ? `- **Closed captions:** [WebVTT](../../../../${report.captionExports.vtt})\n- **Transcript:** [Text](../../../../${report.captionExports.transcript})\n- **Burned-in captions:** ${report.captionSource?.burnedIn ? "Enabled" : "Disabled; clean MP4"}` : ""}
 
 ## Checks
 
@@ -1092,11 +1032,38 @@ async function readCorrectionAttempts(id) {
 
 async function runAll(directory) {
   const { composition, serveUrl } = await getComposition(compositionId);
+  if (
+    mode === "export" &&
+    composition.defaultProps?.captionSrc &&
+    composition.defaultProps.showCaptions !== false
+  ) {
+    throw new Error("Sidecar-caption exports require showCaptions: false; captions must not be burned into the MP4.");
+  }
   const report = await readOrCreateReport(directory, composition, compositionId);
   report.checks = [];
   report.issues = [];
   report.correctionAttempts = await readCorrectionAttempts(compositionId);
   report.visualReview = { approved: false, reviewer: null, notes: "" };
+  let captionAssets;
+  if (composition.defaultProps?.captionSrc) {
+    try {
+      captionAssets = await prepareCaptionAssets(root, composition);
+      report.captionSource = {
+        src: composition.defaultProps.captionSrc,
+        status: captionAssets.status,
+        audioSha256: captionAssets.audioHash,
+        cueCount: captionAssets.cueCount,
+        lastCueEndMs: captionAssets.lastCueEndMs,
+        burnedIn: composition.defaultProps.showCaptions,
+      };
+      addCheck(report, "captions.sidecar-source", "passed",
+        `Validated ${captionAssets.cueCount} ordered cues against the narration SHA-256 and measured master duration. WebVTT and transcript share this source. ${captionAssets.status}`);
+    } catch (error) {
+      const details = error instanceof Error ? error.message : String(error);
+      addCheck(report, "captions.sidecar-source", "failed", details, "Caption source timing or narration identity.");
+      addIssue(report, "captions.sidecar-source", "error", details, "Correct the canonical caption JSON or retime it against the actual narration.");
+    }
+  }
 
   await runCompositionTest(compositionId, directory, report);
   const rendered = await renderPreview(
@@ -1109,7 +1076,7 @@ async function runAll(directory) {
     await checkRenderedVideo(composition, directory, report);
   }
   await writeReport(directory, report);
-  return { composition, directory, report };
+  return { composition, directory, report, captionAssets };
 }
 
 async function runChecksForExistingRender(directory) {
@@ -1296,6 +1263,15 @@ async function main() {
       await mkdir(path.dirname(exportPath), { recursive: true });
       await copyFile(path.join(directory, "preview.mp4"), exportPath);
       result.report.export = relativePath(exportPath);
+      if (result.captionAssets) {
+        const sidecars = await writeCaptionAssets(result.captionAssets, exportPath);
+        result.report.captionExports = {
+          vtt: relativePath(sidecars.vtt),
+          transcript: relativePath(sidecars.transcript),
+        };
+        console.log(`Closed captions: ${relativePath(sidecars.vtt)}`);
+        console.log(`Transcript: ${relativePath(sidecars.transcript)}`);
+      }
       await writeReport(directory, result.report);
       console.log(`Final export: ${relativePath(exportPath)}`);
     }

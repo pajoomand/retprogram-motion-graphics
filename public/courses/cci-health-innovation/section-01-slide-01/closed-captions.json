@@ -1,0 +1,120 @@
+{
+  "language": "en",
+  "status": "Timed to supplied temporary narration; machine transcript, human review required",
+  "audioSha256": "6863e2feb894a83cf153aeb9bb45c971b368c30f0b99dc08368fa01700e78dff",
+  "audioDurationMs": 39314.25,
+  "captions": [
+    {
+      "text": "Health innovations are developed by people",
+      "startMs": 100,
+      "endMs": 2200,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "with different kinds of knowledge and expertise.",
+      "startMs": 2200,
+      "endMs": 4705,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "A clinician may understand treatment options",
+      "startMs": 5209,
+      "endMs": 7560,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "and clinical outcomes.",
+      "startMs": 7560,
+      "endMs": 8828,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "An innovator or developer may understand",
+      "startMs": 9358,
+      "endMs": 12000,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "what is technically possible and the potential value.",
+      "startMs": 12000,
+      "endMs": 14650,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "A funder or purchaser may be considering cost,",
+      "startMs": 15276,
+      "endMs": 18400,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "implementation and impact.",
+      "startMs": 18475,
+      "endMs": 20193,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "People who live with a health condition",
+      "startMs": 20904,
+      "endMs": 22720,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "or care for someone who does",
+      "startMs": 22720,
+      "endMs": 24249,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "understand how it affects daily life.",
+      "startMs": 24560,
+      "endMs": 26693,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "These perspectives matter for different reasons.",
+      "startMs": 27342,
+      "endMs": 29814,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "Consumer involvement deliberately brings",
+      "startMs": 30340,
+      "endMs": 32520,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "relevant lived experience and expertise",
+      "startMs": 32520,
+      "endMs": 35240,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "into the decisions being made",
+      "startMs": 35240,
+      "endMs": 36840,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "throughout the development of a health innovation.",
+      "startMs": 36840,
+      "endMs": 39063,
+      "timestampMs": null,
+      "confidence": null
+    }
+  ]
+}
