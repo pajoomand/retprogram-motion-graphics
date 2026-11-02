@@ -22,6 +22,12 @@ installed Remotion captions and multimedia skills.
 
 ## Requirements
 
+- For new videos, confirm explicit human storyboard approval and production
+  start before implementing final narration synchronization. Listening to
+  supplied audio to identify storyboard beats is permitted before approval;
+  final retiming/animation is not. Preserve the approved narrative progression.
+  If a new metaphor, sequence or substantial layout is needed, regenerate the
+  storyboard and STOP for renewed human storyboard approval.
 - Use the actual audio and approved transcript as the source of timing and
   wording. Never fabricate word timings or imply synchronization if the audio
   cannot be accessed.

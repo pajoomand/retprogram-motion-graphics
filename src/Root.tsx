@@ -8,6 +8,11 @@ import { nextLogoConfig } from "./courses/examples/next-logo/video.config";
 import { Composition, Folder } from "remotion";
 import { CciSlide01 } from "./courses/cci-health-innovation/section-01-slide-01/Video";
 import { slide01Config } from "./courses/cci-health-innovation/section-01-slide-01/video.config";
+import { CciSlide02 } from "./courses/cci-health-innovation/section-01-slide-02/Video";
+import { getSlide02Timing, slide02PropsSchema } from "./courses/cci-health-innovation/section-01-slide-02/timing";
+import { Slide02Storyboard } from "./courses/cci-health-innovation/section-01-slide-02/Storyboard";
+import { slide02Config } from "./courses/cci-health-innovation/section-01-slide-02/video.config";
+import slide02Storyboard from "./courses/cci-health-innovation/section-01-slide-02/storyboard.config.json";
 import {
   getSlide01Timing,
   slide01PropsSchema,
@@ -61,6 +66,35 @@ export const RemotionRoot: React.FC = () => {
           calculateMetadata={({ props }) => ({
             durationInFrames: getSlide01Timing(props).durationInFrames,
           })}
+        />
+        <Composition
+          id="CCIHealthInnovation-S01-Slide02"
+          component={CciSlide02}
+          durationInFrames={slide02Config.durationInFrames}
+          fps={slide02Config.fps}
+          width={slide02Config.width}
+          height={slide02Config.height}
+          schema={slide02PropsSchema}
+          defaultProps={{
+            sceneDurations: {
+              definition: 410, separate: 236, invited: 111, need: 68, assumption: 46,
+              options: 35, decision: 62, expertise: 438, voices: 370,
+            },
+            narrationSrc: "courses/cci-health-innovation/section-01-slide-02/s01-slide02-temp-narration.mp3",
+            captionSrc: "courses/cci-health-innovation/section-01-slide-02/closed-captions.json",
+            showCaptions: false,
+          }}
+          calculateMetadata={({ props }) => ({
+            durationInFrames: getSlide02Timing(props).durationInFrames,
+          })}
+        />
+        <Composition
+          id="CCIHealthInnovation-S01-Slide02-Storyboard"
+          component={Slide02Storyboard}
+          durationInFrames={slide02Storyboard.beats.length * slide02Storyboard.framesPerBeat}
+          fps={slide02Config.fps}
+          width={slide02Config.width}
+          height={slide02Config.height}
         />
       </Folder>
       <Folder name="retprogram-brand">

@@ -6,6 +6,7 @@ export async function createContactSheet(samples, outputPath, root) {
   const images = await Promise.all(
     samples.map(async (sample) => ({
       frame: sample.frame,
+      label: sample.label,
       data: (await readFile(path.resolve(root, sample.file))).toString(
         "base64",
       ),
@@ -15,6 +16,9 @@ export async function createContactSheet(samples, outputPath, root) {
   if (!columns)
     throw new Error("Cannot create a contact sheet without frames.");
   const browser = await chromium.launch();
+  const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  })[character]);
   try {
     const page = await browser.newPage({
       viewport: { width: columns * 480, height: 306 },
@@ -23,7 +27,7 @@ export async function createContactSheet(samples, outputPath, root) {
     await page.setContent(
       `<html><body style="margin:0;background:#e8e8e8;font:18px Arial">
       <main style="display:grid;grid-template-columns:repeat(${columns},480px)">
-      ${images.map((image) => `<figure style="margin:0"><img width="480" height="270" style="display:block" src="data:image/png;base64,${image.data}"><figcaption style="height:36px;line-height:36px;padding-left:14px;box-sizing:border-box">Frame ${image.frame}</figcaption></figure>`).join("")}
+      ${images.map((image) => `<figure style="margin:0"><img width="480" height="270" style="display:block" src="data:image/png;base64,${image.data}"><figcaption style="${image.label === undefined ? "height:36px;line-height:36px;padding-left:14px;box-sizing:border-box" : "min-height:36px;padding:8px 14px;box-sizing:border-box;overflow-wrap:anywhere"}">${escapeHtml(image.label ?? `Frame ${image.frame}`)}</figcaption></figure>`).join("")}
       </main></body></html>`,
       { waitUntil: "load" },
     );

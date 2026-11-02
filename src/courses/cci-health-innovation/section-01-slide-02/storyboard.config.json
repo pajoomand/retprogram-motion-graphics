@@ -1,0 +1,109 @@
+{
+  "compositionId": "CCIHealthInnovation-S01-Slide02",
+  "storyboardCompositionId": "CCIHealthInnovation-S01-Slide02-Storyboard",
+  "concept": "One continuous experience-to-contribution diagram, not nine slides. The main title stays 'Who is a consumer in this context?' throughout. Experience and innovation start separate; a dashed relationship explains that experience alone is not involvement, then becomes a solid invited contribution. Four possible contributions accumulate inside the persistent innovation workspace. Lived-experience expertise gains emphasis without a reset. Relevant voices across concept, design and implementation, and delivery extend this same system into the final state; narration finishes there, with no tenth summary. Header-free CCI tokens, icons and typography are retained. Static poses are proposed state changes, not implemented motion or narration synchronization. Awaiting human storyboard re-approval.",
+  "framesPerBeat": 60,
+  "beats": [
+    {
+      "name": "Experience and innovation are distinct",
+      "narrationCue": "In this course, consumers are people with relevant lived experience and expertise of a health condition or issue, including carers, who contribute their knowledge and perspectives to inform and shape innovation.",
+      "visual": "Header-free paper canvas with no top eyebrow/banner. Stable 74 px navy title 'Who is a consumer in this context?' begins at y=72, with the supporting concept at y=177. The whole diagram moves up 50 px; the peach innovation workspace is 440 px high with more generous 72 px contribution-row spacing. The mint lived-experience node and icon are slightly larger. These separate anchors face each other across an empty gap. The workspace's lightbulb and 'Innovation in development' identity are already visible. No connection or contribution rows yet; no additional copy is introduced.",
+      "purpose": "Establish distinct concepts before explaining the deliberate relationship between experience and involvement. The opening narration previews the definition; the visual does not imply automatic membership.",
+      "transitionIntention": "Keep title, person, workspace and identity anchored. Introduce a dashed relationship in the existing gap as the narration distinguishes experience from involvement.",
+      "persists": "Initial state establishes the single teaching title, relevant-lived-experience node, patient/carer label, peach workspace and Innovation in development identity for the whole clip.",
+      "addsOrChanges": "Introduce the two separate conceptual anchors and an empty shared workspace.",
+      "attentionTarget": "The spatial separation between relevant experience and innovation.",
+      "removes": []
+    },
+    {
+      "name": "Experience alone is not involvement",
+      "narrationCue": "Being a patient or carer gives someone experience, but it does not automatically mean they are being involved in developing an innovation.",
+      "visual": "Both anchored objects and the main title remain unchanged. A dashed teal line spans the gap, labelled locally 'Experience alone ≠ involvement'. The incomplete line denotes a relationship not yet established, not a failed or unqualified person. No contribution rows appear.",
+      "purpose": "Make the distinction explicit with both the broken relationship and a complete local phrase; do not rely on Not automatic alone.",
+      "transitionIntention": "Transform this same dashed line into a solid line when the invited role is spoken; replace only its explanatory label.",
+      "persists": "Main title, experience node and labels, workspace, lightbulb and Innovation in development identity remain at identical positions. No top eyebrow or banner is present.",
+      "addsOrChanges": "Add the dashed connector and the precise local distinction Experience alone ≠ involvement.",
+      "attentionTarget": "The broken connection and its local relationship label.",
+      "removes": []
+    },
+    {
+      "name": "An invitation establishes the contribution",
+      "narrationCue": "What matters here is the role they are being invited to play:",
+      "visual": "The dashed connector is now solid teal in the same position, labelled 'Invited to contribute'. The unchanged node and workspace remain connected from this point onwards; the title and Innovation in development identity do not change.",
+      "purpose": "The visual change from broken to solid communicates the invited role, rather than a new slide or a personal qualification.",
+      "transitionIntention": "Hold the established connection; begin adding possible contributions within the existing workspace.",
+      "persists": "All anchored objects, the same connector component, title, labels and innovation identity.",
+      "addsOrChanges": "Change the connector's dashed stroke to solid and its label to Invited to contribute.",
+      "attentionTarget": "The now-established contribution relationship.",
+      "removes": [
+        { "element": "Experience alone ≠ involvement label and dashed stroke treatment", "reason": "The same relationship now represents an explicit invitation; replace its state/label rather than removing and recreating its component." }
+      ]
+    },
+    {
+      "name": "Add understanding a need",
+      "narrationCue": "helping a team understand a need",
+      "visual": "The main title and complete connected system stay unchanged. Add one small magnifier icon and the short label Understand a need in the first reserved row inside the peach workspace, beneath its persistent identity. Later rows remain unoccupied, not placeholder bullets.",
+      "purpose": "Show one possible contribution of relevant lived experience within the team's ongoing work.",
+      "transitionIntention": "Keep this row while adding the next contribution below it; no replacement illustration or heading.",
+      "persists": "Main title, experience node, patient/carer label, solid connector and Invited to contribute label, workspace and Innovation in development identity.",
+      "addsOrChanges": "Add the magnifier and Understand a need row inside the workspace.",
+      "attentionTarget": "The newly added first contribution row.",
+      "removes": []
+    },
+    {
+      "name": "Add questioning an assumption",
+      "narrationCue": "question an assumption",
+      "visual": "Understand a need remains in its first row. Add a consistent small question icon with Question an assumption in the second row, directly underneath. Both examples coexist within the unchanged peach workspace.",
+      "purpose": "Build a repertoire of possible contributions, not a mandatory ordered method or a claim that the assumption is wrong.",
+      "transitionIntention": "Retain both rows and add an options branch below them; shift attention only to the new item.",
+      "persists": "All anchors, title, identity and solid invitation link; the complete Understand a need row.",
+      "addsOrChanges": "Add the question icon and Question an assumption row without replacing the first contribution.",
+      "attentionTarget": "The second contribution row.",
+      "removes": []
+    },
+    {
+      "name": "Add considering options",
+      "narrationCue": "consider options",
+      "visual": "The first two rows remain in place. Add a small branching-path icon and Consider options in the third row. Blue and lilac endpoints do not identify a winner. Title, anchors and connector remain stable.",
+      "purpose": "Show another possible way of contributing; no option is preselected and earlier contributions remain available.",
+      "transitionIntention": "Keep all three rows and add the shared decision point as a fourth row.",
+      "persists": "The full connected system, main title, innovation identity and first two contribution rows.",
+      "addsOrChanges": "Add the branching icon and Consider options row.",
+      "attentionTarget": "The third contribution row, without moving the others.",
+      "removes": []
+    },
+    {
+      "name": "Add informing a decision",
+      "narrationCue": "or make a decision.",
+      "visual": "Add a small open decision-ring icon and Inform a decision as the fourth row. All four contributions are now visible together under Innovation in development. There is no success badge, tick or sole-decision-maker implication.",
+      "purpose": "Resolve the cumulative set of examples as possible contributions to team thinking, not four replacement scenes or compulsory sequential tasks.",
+      "transitionIntention": "Keep the complete list while shifting emphasis back to the lived-experience node.",
+      "persists": "Title, experience node and labels, solid invitation link, innovation workspace and identity, and all three existing contribution rows.",
+      "addsOrChanges": "Add the decision icon and Inform a decision row; the cumulative set is complete.",
+      "attentionTarget": "The fourth row, then the relationship between the complete set and the lived-experience contributor.",
+      "removes": []
+    },
+    {
+      "name": "Emphasise lived-experience expertise",
+      "narrationCue": "The role of people with lived experience is not to become an overnight expert in science or technology – it is to bring a relevant and realistic perspective as a team member to make the concept or project even better than what it could have been.",
+      "visual": "Keep the consumer node, connector and innovation workspace in their established positions. Strengthen the consumer node's teal outline to shift focus without moving or resizing the anchors. Slightly soften the peach workspace and its identity/four contribution rows while retaining legibility. In the gap between consumer and workspace, a compact mint callout with a fine leader to the consumer reads: Lived-experience expertise / Relevant, realistic perspective / Technical expertise not required. The first and third lines are emphasized. No separate bottom-left text block or new figure; narration carries the fuller explanation.",
+      "purpose": "Direct attention to the expertise already present in the person, rather than suggesting technical retraining or replacing other team expertise.",
+      "transitionIntention": "Beat 7 to 8 is a focus shift within the same composition, not a layout rebuild. In Beat 9 retain the complete three-line callout with identical wording, internal layout and dimensions. Only soften overall emphasis, retaining the contribution list and introducing the stage-specific voices question below.",
+      "persists": "Main title, original node/icon and patient/carer label, solid invitation connector, workspace identity and all four contribution rows.",
+      "addsOrChanges": "Strengthen the existing node's teal outline; slightly reduce workspace emphasis; add a compact three-line expertise callout and leader in the inter-node gap. No anchor moves or reset.",
+      "attentionTarget": "The person's existing lived-experience expertise and its relevant, realistic team contribution.",
+      "removes": []
+    },
+    {
+      "name": "Whose voices are needed? - final state",
+      "narrationCue": "It’s always important to consider whose lived experience voices are needed to inform the concept, the design and implementation and lastly, the delivery to ensure it can have the greatest impact/effect. Recording-based sidecars retain the recorded closing wording; the supplied draft is preserved.",
+      "visual": "Two-tier composition with all upper anchors and four contribution items in unchanged positions. The list stays at 60% opacity. Preserve the full Beat 8 mint callout exactly: Lived-experience expertise / Relevant, realistic perspective / Technical expertise not required, with identical 420 by 176 px dimensions, typography, spacing and position; only overall opacity reduces to 80%. Keep the centered 38 px question at canvas y=825, not closer to the upper diagram. Lower the speech bubbles another 12 px and shorten their leaders, giving 34 px clear space from the question's line box to the icons. Keep the line, evenly spaced nodes and 32 px labels fixed, with labels inside the bottom text-safe boundary. The pathway remains 1440 px wide, with 720 px node intervals and full-opacity 2 px dark-teal strokes for contrast. The storyboard-only footer remains below the labels. The final state is awaiting final human storyboard approval; no animation is developed in this correction.",
+      "purpose": "Ask which relevant experience is needed across the work without implying that one person represents everyone. The existing final state supports the narration through its ending.",
+      "transitionIntention": "For future production after renewed approval, shift focus using overall emphasis only: retain all three expertise lines and their internal layout unchanged, introduce the question, then reveal the pathway left to right on the measured stage phrases. Keep established components mounted. Hold the completed final state from frame 1695 through 1775 (2.7 seconds), through closing narration, without a tenth beat. Confirm stroke contrast after video compression during production QA. This correction is storyboard-only and shows the settled pathway.",
+      "persists": "The single main title, person/icon and expertise annotation, workspace and Innovation in development identity, solid invitation link and all four accumulated contribution rows.",
+      "addsOrChanges": "Lower only the speech-bubble icons by another 12 px and shorten their leaders, achieving 34 px question-to-icon clearance. Preserve the upper composition, complete three-line expertise component, question, line/nodes, labels and review footer in place. Retain the 1440 px width, evenly spaced nodes, 32 px labels and full-opacity dark-teal strokes.",
+      "attentionTarget": "Relevant lived-experience voices across the three project stages; finish here.",
+      "removes": []
+    }
+  ]
+}

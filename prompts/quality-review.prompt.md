@@ -23,6 +23,11 @@ frames where available.
 
 ## Review criteria
 
+- **Approval gates:** storyboard approval preceded detailed implementation;
+  compare the final sequence with approved key states and transition intentions.
+  `qa:video` technical success means awaiting human video approval, not final
+  approval. Record `qa:approve` only after an explicit human decision.
+  New storyboard-only work needs layout/still review, not full MP4 QA.
 - **Accuracy:** visuals, labels, and narration do not change, overstate, or
   contradict approved scientific or medical content.
 - **Storytelling:** each scene communicates one concept; imagery is meaningful,

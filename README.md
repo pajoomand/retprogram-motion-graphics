@@ -34,6 +34,7 @@ remain provisional because no narration recording has been provided.
 | Course folder | Video package | Composition IDs |
 |---|---|---|
 | `cci-health-innovation` | `section-01-slide-01` | `CCIHealthInnovation-S01-Slide01` |
+| `cci-health-innovation` | `section-01-slide-02` | `CCIHealthInnovation-S01-Slide02` (narration-led continuous production), `CCIHealthInnovation-S01-Slide02-Storyboard` (nine approved continuous states) |
 | `good-clinical-practice` | `understanding-informed-consent` | `RETProgramInformedConsent`, `RETProgramInformedConsentProof` |
 | `retprogram-brand` | `style-proof` | `RETProgramStyleProof` |
 | `examples` | `my-comp`, `next-logo` | `MyComp`, `NextLogo` |
@@ -85,13 +86,89 @@ edit that file rather than maintaining a second transcript/timing array.
 The CCI QA profile uses PNG source frames and BT.709 video colour conversion
 for faithful browser playback; legacy compositions retain their render settings.
 The CCI theme/components retain this approved opt-in visual baseline; existing videos
-and theme defaults are unchanged. Slides 2-7 are not implemented.
+and legacy theme defaults are unchanged. Slide 2's header-free, continuous-story
+revision was approved on 2026-11-02; production remains subject to technical QA
+and separate human video approval. Slides 3-7 are
+not implemented.
 
 ```cmd
 npm run remotion
 npm run qa:video -- CCIHealthInnovation-S01-Slide01
 npm run export:video -- CCIHealthInnovation-S01-Slide01 out\exports\CCIHealthInnovation-S01-Slide01.mp4
 ```
+
+### CCI content-first layout (Slide 2 and future work)
+
+Do not use the persistent course name, breadcrumb or top-right RETProgram
+label. No top navigation/context band is reserved. Use a small in-content
+eyebrow or a minimal footer only when needed; do not reintroduce a persistent
+header unless explicitly requested.
+
+The shared opt-in `cciContentLayout` in
+[CCI tokens](src/shared/themes/cci.ts) starts the eyebrow at y=72 and main heading
+at y=126, with supporting text at y=231. The revised Slide 2 storyboard uses
+stable anchors and a vertically extended workspace to fit cumulative
+contributions and the final voices path, retaining safe margins,
+the palette and type hierarchy. Slide 2 omits the optional eyebrow, moves its
+stable title to y=72 and support to y=177, and shares the approved scene surface
+between storyboard and production. Do not restore an extra top band.
+The legacy `CourseHeader` remains for approved Slide 1 only; that video's
+appearance is intentionally unchanged.
+
+### CCI Slide 2 narration-led production
+
+The [Slide 2 proposal](src/courses/cci-health-innovation/section-01-slide-02/storyboard.md)
+uses one evolving experience-to-contribution connection to distinguish having
+relevant lived experience from an invited role in informing/shaping innovation.
+Its nine approved key states use the CCI design system and a stable main title.
+Separate experience/workspace anchors gain a dashed distinction, then a solid
+invitation link. Four contributions accumulate; local expertise emphasis follows;
+the final voices/stage extension holds through the narration ending. No summary
+scene follows. Every beat records persistence, additions, attention and removals.
+The
+[working draft narration](src/courses/cci-health-innovation/section-01-slide-02/narration-script.md)
+is preserved unchanged. The user approved the storyboard and authorized full
+production after timing the supplied temporary narration. Native decoded audio
+is **59.16734693877551 s**; production is **1776 frames / 59.2 s** at 30 fps.
+See the [measured timing map](src/courses/cci-health-innovation/section-01-slide-02/timing-map.md)
+and [audio evidence](src/courses/cci-health-innovation/section-01-slide-02/audio-analysis.json).
+Unequal scene durations follow the spoken phrases; longer ideas have purposeful
+secondary reveals and comprehension holds. Production reuses `ContributionStory`
+without remounting its anchors. Contribution rows accumulate at frames 757,
+825, 871 and 906; expertise focus starts at 968. The final voices state starts
+at 1406 and remains through frame 1775; stage reveals follow frames 1530,
+1574 and 1677, not equal divisions. Beat 9 retains a softer four-row list and
+unchanged three-line expertise callout while the wider voice-marker pathway takes
+focus. The question stays in place; the latest refinement lowers only the speech
+bubbles another 12 px and shortens their leaders for 34 px clear space below the
+question's line box. The pathway and evenly spaced nodes stay fixed, and the
+32 px stage labels remain inside the bottom safe area. Full-opacity dark-teal
+strokes are retained; compression legibility must be checked during production QA.
+Slide 1 remains unchanged.
+
+```cmd
+npm run qa:video -- CCIHealthInnovation-S01-Slide02
+```
+
+Review `out/storyboards/CCIHealthInnovation-S01-Slide02/storyboard.png` and
+`storyboard.md`, or select `CCIHealthInnovation-S01-Slide02-Storyboard` in
+Studio. Approval and production start were recorded following the user's
+explicit decision on 2026-11-02, including the authorized final minor label/list
+refinements. **Production is now paused for human storyboard re-approval** of the
+latest spacing and three-line callout continuity correction. Do not run full-motion
+QA or resume animation until the user approves that revised storyboard.
+Original artifacts are retained
+under `out/slide02-continuity-review/previous-storyboard/`.
+Do not regenerate approved storyboard outputs during motion work: they are
+hash-bound review evidence. Full-motion QA runs before human video approval.
+Production has clean video and canonical sidecar caption JSON.
+Review `.vtt` and `.txt` files are under
+`out/captions/CCIHealthInnovation-S01-Slide02/`; QA renders its review MP4 under
+`out/qa/CCIHealthInnovation-S01-Slide02/`. Local machine transcription and
+acoustic timings require human transcript review; the recorded closing phrase
+differs from the preserved draft. Successful QA is not human video approval.
+After production implementation/QA, stop for **Awaiting human video approval**; do not
+invoke `qa:approve` or final export without that explicit review.
 
 ## Installation
 
@@ -155,6 +232,10 @@ npx remotion compositions
 ```
 
 ## Automated video quality assurance
+
+For new videos, complete the [storyboard approval stage](#storyboard-approval-stage)
+before full-motion QA. The existing six registrations retain their current
+workflow; Section 1 Slide 1 is not changed or retroactively reapproved.
 
 Playwright checks the Remotion Studio preview and assembles labelled contact
 sheets locally. Remotion's bundled FFmpeg and FFprobe inspect rendered video,
@@ -390,12 +471,258 @@ Reusable task templates are available in `prompts/`:
 
 ## Production and validation
 
-For a new course, first propose the visual direction, storyboard, timing
-assumptions, and technical structure for approval. Build a 15–20-second proof
-before extending it into a full video. Preview it in Studio and render
+For a new course, first generate the visual storyboard described below and
+STOP for human storyboard approval. Only after explicit approval, build a
+15–20-second proof before extending it into a full video. Preview it in Studio and render
 representative frames to check clipping, spacing, contrast, caption placement,
 and transitions. Do not claim final narration synchronization until the actual
 approved audio is available.
+
+### Storyboard approval stage
+
+**CONTENT + NARRATION -> STORYBOARD -> HUMAN STORYBOARD APPROVAL ->
+FULL MOTION IMPLEMENTATION -> QA -> HUMAN VIDEO APPROVAL -> FINAL OUTPUT**
+
+Read the supplied content/narration, identify narrative beats, and develop a
+visual metaphor and progression using the course design system. Author about
+6-10 representative visual states. Select meaningful changes of understanding
+or composition, not evenly spaced timestamps from an already-animated video.
+Each state establishes objects, typography, hierarchy, approximate layout,
+colour, relationships and narrative progression. Describe intended transitions;
+finished motion curves, micro-animation, connector drawing, entrance motion,
+audio synchronization, full QA and an MP4 are deliberately out of scope.
+
+For each **new** video, add `storyboard.config.json` beside `video.config.ts`.
+This illustrative shape shows one beat; supply the actual approved-source cues
+and approximately 6-10 meaningful beats for your video (other counts are allowed
+when the concept warrants them):
+
+```json
+{
+  "compositionId": "Course-Video",
+  "storyboardCompositionId": "Course-Video-Storyboard",
+  "concept": "Describe the proposed visual metaphor and narrative progression.",
+  "framesPerBeat": 60,
+  "beats": [
+    {
+      "name": "Opening concept",
+      "narrationCue": "Relevant supplied narration phrase or meaning.",
+      "visual": "Describe composition, objects, text, hierarchy, layout and colour.",
+      "purpose": "What this visual communicates.",
+      "transitionIntention": "How the relationships evolve into the next state.",
+      "persists": "The title, existing anchors and their established relationship.",
+      "addsOrChanges": "One new example within the existing diagram.",
+      "attentionTarget": "The newly added example.",
+      "removes": []
+    }
+  ]
+}
+```
+
+`framesPerBeat` is only a convenient Studio inspection hold, **not an exact
+narration time**. No narration timestamps are inferred. Keep source script and
+the authored `storyboard.md` in the video package; the command generates a
+review copy from the manifest, not a replacement for approved course content.
+Missing or provisional content/narration must be labelled honestly.
+
+**A storyboard beat represents a change from the previous visual state, not a
+new slide.** Every beat documents **Persists**, **Adds or changes**,
+**Attention target**, and **Removes**. The manifest requires these fields;
+`removes` is `[]` for none, otherwise an array of
+`{ "element": "...", "reason": "..." }`. Each removal requires a reason.
+
+Keep one main title for one teaching concept unless a genuine topic/scene
+change warrants another. Keep conceptual components mounted and anchored,
+accumulate enumerated ideas where screen space permits, and avoid changing
+title, layout and major object simultaneously. Transitions explain conceptual
+relationships. Finish on an established state rather than a redundant summary.
+Do not repeat a top banner/eyebrow across beats unless it adds essential learning
+value; prioritize that space for the explainer diagram. Slide 2 retains its
+teaching title without an additional top eyebrow.
+
+**Cumulative continuity does not require every persistent element to remain at
+equal visual emphasis. When attention moves to a new concept, previously
+established elements may remain visible but reduce in prominence.**
+
+**When a final beat introduces a new conceptual layer, reduce visual density
+elsewhere rather than continuously adding equally prominent information.**
+
+**When a persistent component carries established information across consecutive
+beats, do not alter its wording, internal structure or content merely to
+accommodate a new beat. Attention may shift through opacity, contrast or emphasis,
+but the established component itself should remain semantically and visually
+consistent unless the storyboard explicitly calls for a content change.**
+
+### Continuity and cognitive-load approval checklist
+
+Follow the [13 production rules](./AGENTS.md#storyboard-continuity-and-cognitive-load-review).
+Assess the storyboard as one evolving sequence, not only individual stills:
+
+- [ ] One stable main title per teaching clip, except genuine topic/scene changes.
+- [ ] Every beat documents Persists, Adds or changes, Attention target and
+      justified Removes.
+- [ ] Persistent objects retain wording, meaning, internal layout and animation
+      continuity; no unnecessary exits/re-entries or resets.
+- [ ] Transitions explain relationships rather than decorate beat boundaries.
+- [ ] Related enumerated ideas accumulate where space permits.
+- [ ] Established context remains visible with restrained reductions in emphasis
+      when attention shifts; removal requires explicit storyboard intent.
+- [ ] New conceptual layers reduce density elsewhere and have a clear attention
+      target instead of filling leftover space.
+- [ ] Every beat has readable type, safe-area clearance, clear title/content and
+      heading/diagram spacing, and balanced horizontal/vertical use.
+- [ ] Removing non-essential headers improves the visual's scale, spacing,
+      readability or hierarchy, not just its vertical position.
+- [ ] One major attention change at a time; no simultaneous title/layout/object/
+      large-text reset.
+- [ ] Each beat logically grows from the previous one; learners can identify what
+      stays the same and understand the cumulative information.
+- [ ] The final state resolves the idea, stays readable and holds for comprehension
+      without redundant summary content.
+- [ ] A human explicitly approves title strategy, continuity, cumulative behaviour,
+      transitions, hierarchy, spacing, cognitive load and final-state clarity
+      before detailed motion, narration synchronization or final rendering.
+
+This checklist is a human review aid, not an automatic approval mechanism.
+Static layout inspection and narration-cue identification can inform a storyboard;
+they do not authorize detailed animation or claim final synchronization.
+
+For continuous stories, create a package-local `Storyboard.tsx` with one mounted
+scene whose state changes across inspection slots:
+
+```tsx
+import { useCurrentFrame } from "remotion";
+import manifest from "./storyboard.config.json";
+import { ConceptScene } from "./scenes/ConceptScene";
+
+const poses = ["opening", "relationship", "contribution"] as const;
+export const VideoStoryboard = () => {
+  const frame = useCurrentFrame();
+  const pose = poses[Math.floor(frame / manifest.framesPerBeat)];
+  if (!pose) throw new Error("Missing storyboard pose.");
+  return <ConceptScene pose={pose} />;
+};
+```
+
+Expand `poses` to match the manifest's beat order/count. `ConceptScene` is
+illustrative, not a supplied component: use the **same local scene components,
+props and shared theme tokens** intended for production, with explicit settled
+poses instead of implementing animation just to obtain a still. Do not key the
+scene by beat or conditionally swap its persistent anchors.
+The opt-in shared `src/shared/storyboard/Storyboard.tsx` helper remains available
+for genuinely independent scenes or legacy `Sequence`/`Freeze` inspection; it is
+not a reason to remount one continuing conceptual object at every beat.
+
+Register both entries explicitly inside the course `Folder` in `src/Root.tsx`.
+Keep the production entry minimal until approval. For the storyboard:
+
+```tsx
+<Composition
+  id="Course-Video-Storyboard"
+  component={VideoStoryboard}
+  durationInFrames={manifest.beats.length * manifest.framesPerBeat}
+  fps={30}
+  width={1920}
+  height={1080}
+/>
+```
+
+Use the production video's configured FPS/dimensions for both entries; the
+exporter verifies their match and the storyboard duration. Open Studio and
+inspect each hold for layout, clipping, hierarchy, legibility, safe margins
+and colour. Storyboard still review is not full-motion QA or visual approval.
+
+```cmd
+npm run remotion
+npm run storyboard -- Course-Video
+```
+
+This bundles the project and renders **one PNG per beat only**, never the
+complete production animation:
+
+```text
+out/storyboards/Course-Video/
+  storyboard.png
+  beat-01.png
+  beat-02.png
+  ...
+  storyboard.md
+```
+
+The contact sheet labels each beat. Each Markdown entry includes **Narration
+cue**, **Visual**, **Purpose**, and **Transition intention**. Old surplus PNGs
+are not deleted on regeneration; only the current manifest's beats appear in
+the new contact sheet, Markdown and approval hash.
+
+After generation, **STOP** and report the storyboard composition ID,
+contact-sheet and Markdown locations, beat count, and a brief visual concept:
+
+**Awaiting human storyboard approval.**
+
+Generation does not authorize full animation. Do not invent a reviewer or
+approve on the user's behalf. Only after an explicit human decision:
+
+```cmd
+npm run storyboard -- Course-Video approve "Human reviewer" "Explicit approval and scope"
+npm run storyboard -- Course-Video start
+```
+
+The package-local, tracked `production-status.json` records:
+
+| State | Meaning |
+|---|---|
+| `draft` | Not generated, or generation incomplete/failed |
+| `awaiting-storyboard-approval` | PNGs/contact sheet/Markdown ready; STOP |
+| `storyboard-approved` | Explicit human approval of the generated revision |
+| `in-production` | Approved full motion may be implemented |
+| `awaiting-video-approval` | Full QA passed; STOP for human video review |
+| `approved` | Human approved the QA-reviewed video revision |
+
+Approval includes a hash of the manifest and generated review artifacts.
+Regeneration always invalidates earlier storyboard **and video** approval,
+including on failure. Preserve review artifacts while producing that revision;
+if absent or edited, regenerate and request approval again. Concept, metaphor,
+sequence or substantial layout changes always require a fresh storyboard.
+Production implementation can add motion without changing the approved states.
+These are local workflow safeguards, not authentication or a substitute for
+human judgment. Do not bypass them with raw CLI/Studio renders or manual
+status edits. `npm run render` directs new videos to the gated QA/export path;
+legacy render commands remain compatible.
+The legacy Lambda render API also rejects new composition IDs: it cannot
+verify that a deployed bundle matches a locally approved video. It retains
+existing-ID behavior; use the local approval/export workflow for new videos.
+
+After approved motion implementation:
+
+```cmd
+npm run qa:video -- Course-Video
+npm run qa:approve -- Course-Video out\qa\Course-Video\RUN-ID "Human reviewer" "Explicit video approval notes"
+npm run export:video -- Course-Video out\exports\Course-Video.mp4
+```
+
+`qa:preview` and `qa:video` require storyboard approval and a recorded
+production start. Successful `qa:video` requests **human video approval**; it
+does not export. `export:video` for new videos rechecks the approved QA render
+and copies that exact MP4, rather than silently rendering a different revision.
+Source/media or reviewed MP4 changes require QA and human video approval again.
+The source fingerprint conservatively covers all `src/` and `public/` files,
+except approval records; unrelated source edits may also require fresh QA.
+Existing caption/stream checks and sidecar rules still apply.
+
+Trivial changes to an already-approved animation, or **explicitly requested**
+reuse without conceptual changes, need not repeat storyboard approval. Record
+the instruction/scope in the package storyboard and retain its existing
+approval. Video QA and video approval still apply. New teaching concepts,
+metaphors, sequences or substantially different layouts are not exceptions.
+Legacy compositions keep their established workflow; never add a new ID to
+the grandfathered list to skip approval.
+
+Workflow tests (including actual PNG generation using an isolated test
+composition, not new course content):
+
+```cmd
+npm run test:storyboard
+```
 
 Typical code checks:
 

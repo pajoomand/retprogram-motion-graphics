@@ -2,24 +2,124 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "CCI Slide 2 production layout test",
+			"type": "process",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"set RETPROGRAM_QA_COMPOSITION_ID=CCIHealthInnovation-S01-Slide02&& set RETPROGRAM_QA_SCREENSHOT=out\\cci-header-layout-review\\production-studio.png&& npx playwright test cci-slide02.spec.ts > out\\cci-header-layout-review\\production-layout-test.log 2>&1"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "CCI Slide 2 production validation",
+			"type": "process",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"(npm run typecheck && npm run lint && npm run build && npx remotion compositions) > out\\slide02-continuous-validation.log 2>&1"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "CCI Slide 2 production QA",
+			"type": "process",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"npm run qa:video -- CCIHealthInnovation-S01-Slide02"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "CCI Slide 2 storyboard",
+			"type": "process",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"npm run storyboard -- CCIHealthInnovation-S01-Slide02"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "CCI Slide 2 storyboard checks",
+			"type": "process",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"npm run typecheck && npm run lint && npm run build && npx remotion compositions && set RETPROGRAM_QA_COMPOSITION_ID=CCIHealthInnovation-S01-Slide02-Storyboard&& npx playwright test cci-slide02-storyboard.spec.ts"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "CCI Slide 2 layout test",
+			"type": "process",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"set RETPROGRAM_QA_COMPOSITION_ID=CCIHealthInnovation-S01-Slide02-Storyboard&& npx playwright test cci-slide02-storyboard.spec.ts > out\\storyboards\\CCIHealthInnovation-S01-Slide02\\layout-validation.log 2>&1"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "CCI Slide 2 source checks",
+			"type": "process",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"npm run typecheck && npm run lint && git --no-pager diff --check && git --no-pager diff --name-only -- src\\courses\\cci-health-innovation\\section-01-slide-01 src\\shared public\\courses\\cci-health-innovation\\section-01-slide-01"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Storyboard workflow checks",
+			"type": "process",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"node --test scripts\\storyboard-workflow.test.mjs scripts\\video-qa-media.test.mjs scripts\\caption-assets.test.mjs && npm run typecheck && npm run lint && npm run build && npx remotion compositions"
+			],
+			"problemMatcher": []
+		},
+		{
 			"label": "CCI Slide 1 QA",
 			"type": "process",
 			"command": "cmd.exe",
-			"args": ["/d", "/c", "npm run qa:video -- CCIHealthInnovation-S01-Slide01"],
+			"args": [
+				"/d",
+				"/c",
+				"npm run qa:video -- CCIHealthInnovation-S01-Slide01"
+			],
 			"problemMatcher": []
 		},
 		{
 			"label": "CCI clean export with caption assets",
 			"type": "process",
 			"command": "cmd.exe",
-			"args": ["/d", "/c", "npm run export:video -- CCIHealthInnovation-S01-Slide01 out\\exports\\CCIHealthInnovation-S01-Slide01.mp4"],
+			"args": [
+				"/d",
+				"/c",
+				"npm run export:video -- CCIHealthInnovation-S01-Slide01 out\\exports\\CCIHealthInnovation-S01-Slide01.mp4"
+			],
 			"problemMatcher": []
 		},
 		{
 			"label": "CCI Remotion Studio",
 			"type": "process",
 			"command": "cmd.exe",
-			"args": ["/d", "/c", "npm run studio:qa"],
+			"args": [
+				"/d",
+				"/c",
+				"npm run studio:qa"
+			],
 			"isBackground": true,
 			"problemMatcher": []
 		},

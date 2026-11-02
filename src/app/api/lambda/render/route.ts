@@ -13,10 +13,16 @@ import {
 } from "../../../../../config.mjs";
 import { RenderRequest } from "../../../../../types/schema";
 import { executeApi } from "../../../../helpers/api-response";
+import { isLegacyComposition } from "../../../../../scripts/storyboard-workflow.mjs";
 
 export const POST = executeApi<RenderMediaOnLambdaOutput, typeof RenderRequest>(
   RenderRequest,
   async (req, body) => {
+    if (!isLegacyComposition(body.id)) {
+      throw new TypeError(
+        "New videos require the local storyboard, QA and human approval workflow. Use npm run export:video after human video approval; this legacy Lambda interface cannot establish approval of a deployed revision.",
+      );
+    }
     if (
       !process.env.AWS_ACCESS_KEY_ID &&
       !process.env.REMOTION_AWS_ACCESS_KEY_ID

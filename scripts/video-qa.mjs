@@ -17,6 +17,10 @@ import {
 import { webpackOverride } from "../src/remotion/webpack-override.mjs";
 import { createContactSheet, scanVideoFrames } from "./video-qa-media.mjs";
 import { prepareCaptionAssets, writeCaptionAssets } from "./caption-assets.mjs";
+import {
+  fileHash, findStoryboard, productionSourceHash, readStatus,
+  requireApprovedVideo, requireStoryboardApproval, saveStatus,
+} from "./storyboard-workflow.mjs";
 
 const root = process.cwd();
 const remotionCli = path.resolve(
@@ -1149,6 +1153,30 @@ async function approveVisualReview(directory, reviewerName, notes) {
       "Visual approval cannot be recorded while technical checks have failed.",
     );
   }
+  const storyboard = await findStoryboard(root, compositionId);
+  let approvedStatus;
+  if (storyboard) {
+    if (!reviewerName.trim() || !notes.trim()) {
+      throw new Error("Explicit human reviewer and video approval notes are required.");
+    }
+    const status = await requireStoryboardApproval(storyboard);
+    if (status.state !== "awaiting-video-approval" ||
+        status.videoReview?.directory !== relativePath(directory) ||
+        status.videoReview.sourceHash !== await productionSourceHash(root) ||
+        status.videoReview.hash !== await fileHash(path.join(directory, "preview.mp4"))) {
+      throw new Error("Run QA on the current production source before human video approval.");
+    }
+    approvedStatus = {
+      ...status,
+      state: "approved",
+      videoApproval: {
+        ...status.videoReview,
+        reviewer: reviewerName,
+        notes,
+        approvedAt: new Date().toISOString(),
+      },
+    };
+  }
   report.visualReview = {
     approved: true,
     reviewer: reviewerName,
@@ -1156,6 +1184,7 @@ async function approveVisualReview(directory, reviewerName, notes) {
     reviewedAt: new Date().toISOString(),
   };
   await writeReport(directory, report);
+  if (storyboard) await saveStatus(storyboard, approvedStatus);
 }
 
 async function recordCorrection(id, issueId, likelyCause, change, result) {
@@ -1203,6 +1232,23 @@ async function recordCorrection(id, issueId, likelyCause, change, result) {
 }
 
 async function main() {
+  const storyboard = await findStoryboard(root, compositionId);
+  if (storyboard && ["render", "run", "export"].includes(mode)) {
+    const status = await requireStoryboardApproval(storyboard);
+    if (mode === "export") {
+      await exportApprovedVideo(storyboard);
+      return;
+    }
+    if (!["in-production", "awaiting-video-approval", "approved"].includes(status.state)) {
+      throw new Error("Record the production start first: npm run storyboard -- <CompositionId> start");
+    }
+    await saveStatus(storyboard, {
+      ...status,
+      state: "in-production",
+      videoReview: null,
+      videoApproval: null,
+    });
+  }
   if (mode === "correction") {
     await recordCorrection(
       compositionId,
@@ -1244,10 +1290,27 @@ async function main() {
     return;
   }
   if (mode === "run" || mode === "export") {
+    const sourceHash = storyboard ? await productionSourceHash(root) : null;
     const result = await runAll(directory);
     if (result.report.technicalStatus !== "passed") {
       process.exitCode = 1;
       return;
+    }
+    if (storyboard) {
+      if (sourceHash !== await productionSourceHash(root)) {
+        throw new Error("Production source changed during QA; rerun QA before requesting video approval.");
+      }
+      const status = await readStatus(storyboard);
+      await saveStatus(storyboard, {
+        ...status,
+        state: "awaiting-video-approval",
+        videoReview: {
+          directory: relativePath(directory),
+          hash: await fileHash(path.join(directory, "preview.mp4")),
+          sourceHash,
+        },
+      });
+      console.log("Awaiting human video approval. No final output has been exported.");
     }
     if (mode === "export") {
       if (!outputArgument) {
@@ -1276,6 +1339,35 @@ async function main() {
       console.log(`Final export: ${relativePath(exportPath)}`);
     }
   }
+}
+
+async function exportApprovedVideo(storyboard) {
+  const { directory, preview } = await requireApprovedVideo(storyboard, root);
+  if (!outputArgument) throw new Error("Provide a final export path under out\\.");
+  const exportPath = path.resolve(root, outputArgument);
+  if (!exportPath.startsWith(path.resolve(root, "out") + path.sep)) {
+    throw new Error("Final exports must be written under the ignored out directory.");
+  }
+  await runChecksForExistingRender(directory);
+  const report = JSON.parse(await readFile(path.join(directory, "report.json"), "utf8"));
+  if (report.technicalStatus !== "passed" || !report.visualReview?.approved) {
+    throw new Error("Final output requires passing technical checks and human video approval.");
+  }
+  const { composition } = await getComposition(compositionId);
+  let captionAssets;
+  if (composition.defaultProps?.captionSrc) {
+    if (composition.defaultProps.showCaptions !== false) {
+      throw new Error("Sidecar-caption exports require showCaptions: false.");
+    }
+    captionAssets = await prepareCaptionAssets(root, composition);
+  }
+  await requireApprovedVideo(storyboard, root);
+  await mkdir(path.dirname(exportPath), { recursive: true });
+  await copyFile(preview, exportPath);
+  if (captionAssets) await writeCaptionAssets(captionAssets, exportPath);
+  report.export = relativePath(exportPath);
+  await writeReport(directory, report);
+  console.log(`Final export (human-approved video, technical checks rerun): ${relativePath(exportPath)}`);
 }
 
 await main();

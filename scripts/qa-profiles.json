@@ -18,6 +18,10 @@
     "audioVideoDurationToleranceSeconds": 0.1
   },
   "compositions": {
+    "CCIHealthInnovation-S01-Slide02": {
+      "renderImageFormat": "png",
+      "colorSpace": "bt709"
+    },
     "CCIHealthInnovation-S01-Slide01": {
       "renderImageFormat": "png",
       "colorSpace": "bt709",
