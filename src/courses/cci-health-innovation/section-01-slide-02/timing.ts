@@ -5,18 +5,18 @@ import { slide02Config } from "./video.config";
 const frames = z.number().int().min(20).max(slide02Config.durationInFrames);
 export const slide02PropsSchema = z.object({
   sceneDurations: z.object({
-    definition: frames.default(410),
-    separate: frames.default(236),
-    invited: frames.default(111),
-    need: frames.default(68),
-    assumption: frames.default(46),
-    options: frames.default(35),
-    decision: frames.default(62),
-    expertise: frames.default(438),
-    voices: frames.default(370),
+    definition: frames.default(412),
+    separate: frames.default(227),
+    invited: frames.default(98),
+    need: frames.default(65),
+    assumption: frames.default(47),
+    options: frames.default(37),
+    decision: frames.default(69),
+    expertise: frames.default(413),
+    voices: frames.default(352),
   }).refine(
     (durations) => Object.values(durations).reduce((total, value) => total + value, 0) === slide02Config.durationInFrames,
-    "Scene durations must total 1776 frames to preserve the measured narration length.",
+    `Scene durations must total ${slide02Config.durationInFrames} frames to preserve the measured narration length.`,
   ),
   narrationSrc: z.literal(slide02Config.narrationSrc),
   captionSrc: z.literal(slide02Config.captionSrc),

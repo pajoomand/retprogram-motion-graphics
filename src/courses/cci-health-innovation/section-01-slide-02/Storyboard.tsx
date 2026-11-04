@@ -17,5 +17,5 @@ export const Slide02Storyboard = () => {
   }
   const state = slide02Poses[Math.floor(frame / manifest.framesPerBeat)];
   if (!state) throw new Error(`No Slide 2 storyboard state at inspection frame ${frame}.`);
-  return <ContributionStory state={state} />;
+  return <ContributionStory state={state} consumerFirstOpening />;
 };

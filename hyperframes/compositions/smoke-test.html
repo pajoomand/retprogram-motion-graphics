@@ -1,0 +1,75 @@
+<template>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 96px;
+      background: #FAF8F3;
+      font-family: Inter, Arial, sans-serif;
+    }
+    #smoke-card {
+      display: flex;
+      width: 1440px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .eyebrow {
+      margin-bottom: 32px;
+      color: #2D706A;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    #smoke-title {
+      max-width: 1360px;
+      color: #142D4E;
+      font-size: 74px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      white-space: pre-line;
+    }
+    .rule {
+      width: 88px;
+      height: 4px;
+      margin-top: 40px;
+      background: #2D706A;
+    }
+    .scope {
+      margin-top: 28px;
+      color: #526375;
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+  </style>
+  <div data-hf-id="hf-9jaj" id="root" data-composition-id="smoke-test" data-width="1920" data-height="1080">
+    <main data-hf-id="hf-njy7" id="smoke-card" class="clip" data-start="0" data-duration="3">
+      <p data-hf-id="hf-7e77" class="eyebrow" data-var-text="course-label">CCI Health Innovation · Section 1 / Slide 1</p>
+      <h1 data-hf-id="hf-qkgv" id="smoke-title" data-var-text="title">One health problem, different perspectives<br data-hf-id="hf-x5px"></h1>
+      <span data-hf-id="hf-bhv4" class="rule" aria-hidden="true"></span>
+      <p data-hf-studio-original-inline-translate="" style="translate: -5.496px 79.695px" data-hf-id="hf-oy65" class="scope" data-var-text="scope">SMOKE TEST · NO NARRATION OR CAPTIONS</p>
+    </main>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    window.__timelines["smoke-test"] = tl;
+    tl.fromTo(
+      "#smoke-card",
+      { opacity: 0.72, y: 10 },
+      { opacity: 1, y: 0, duration: 14 / 30, ease: "power2.out" },
+      0,
+    );
+    tl.seek(0);
+  </script>
+</template>

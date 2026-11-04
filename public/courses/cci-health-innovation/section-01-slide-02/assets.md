@@ -2,13 +2,16 @@
 
 ## Supplied narration and derived captions
 
-- `s01-slide02-temp-narration.mp3`: user-supplied temporary recording; byte-identical
-  copy of `public/audio/cci-health-innovation/section-01/s01-slide02-temp-narration.mp3`.
-  Original remains untouched. Mono MP3, 44,100 Hz.
-- SHA-256: `156d72377724c41138c04b9d98eb9521aa1dca69d1b37a16720e6c76d48c5547`.
-- Exact decoded duration: 2,609,280 samples / 44,100 Hz =
-  59.16734693877551 s. 1776 production frames at 30 fps.
-- `closed-captions.json`: canonical 25-cue Remotion Caption source with narration
+- `s01-slide02-temp-narration.mp3`: selected replacement temporary recording.
+  The original upload path `public/audio/cci-health-innovation/section-01/s01-slide02-temp-narration.mp3`
+  holds the same recording (FFprobe approximately 57.313 s), selected by
+  the user as the replacement master. The files are now byte-identical.
+  The older 59.167-second course master, captions and analysis are preserved
+  under `out/slide02-production/before-replacement-master/`.
+- SHA-256: `d714d422b398124f2fe56732399dd7ad328c081faf061adb159f70ec8d69e61f`.
+- Exact decoded duration: 2,527,488 samples / 44,100 Hz =
+  57.31265306122449 s. 1720 production frames at 30 fps.
+- `closed-captions.json`: canonical 24-cue Remotion Caption source with narration
   hash and duration. Derived locally with whisper.cpp and acoustic pause checks,
   not a human-verified transcript or medical approval.
 - Matching WebVTT and transcript review sidecars are generated under

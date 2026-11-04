@@ -1,1437 +1,1309 @@
 {
-  "status": "Timed to supplied temporary narration using local machine transcription and acoustic pauses; human transcript and timing review required",
-  "method": "Local whisper.cpp v1.7.6 small.en, full token JSON; Remotion bundled FFprobe and FFmpeg silencedetect -35dB, minimum 0.08 seconds; native mono PCM sample count for exact decoded duration",
+  "status": "Selected narration; local machine transcription and acoustic pause timing. Human transcript and timing review required.",
+  "method": "Local whisper.cpp small.en; Remotion bundled FFmpeg silence detection (-35dB, 0.08s) and native 44.1kHz mono WAV sample count.",
   "source": "public/audio/cci-health-innovation/section-01/s01-slide02-temp-narration.mp3",
-  "sha256": "156d72377724c41138c04b9d98eb9521aa1dca69d1b37a16720e6c76d48c5547",
-  "ffprobeDurationSeconds": 59.167313,
+  "sha256": "d714d422b398124f2fe56732399dd7ad328c081faf061adb159f70ec8d69e61f",
+  "ffprobeDurationSeconds": 57.312625,
   "fps": 30,
-  "durationInFrames": 1776,
-  "decodedSampleCount": 2609280,
+  "durationInFrames": 1720,
+  "decodedSampleCount": 2527488,
   "decodedSampleRate": 44100,
-  "decodedDurationSeconds": 59.16734693877551,
-  "cueMethod": "Sentence/phrase recognition matched to acoustic pauses, rounded to nearest video frame. Whisper token offsets can drift inside continuous speech; sub-cues without pauses remain machine estimates, not forced-alignment ground truth.",
+  "decodedDurationSeconds": 57.31265306122449,
+  "cueMethod": "Phrase onsets refined to acoustic pauses. Sub-cues within continuous speech use machine token estimates; human review required, not verified forced alignment.",
   "transcriptDifferences": [
-    "Audio machine transcript ends 'to ensure it has the greatest impact.' Draft says 'to ensure it can have the greatest impact/effect.' Captions retain the recorded wording; original draft remains unchanged."
+    "Selected replacement recording uses 'They contribute', 'What matters is the role they are invited to play', and 'or inform a decision'.",
+    "It states that lived-experience expertise brings a relevant and realistic perspective; no 'as a team member' phrase is spoken.",
+    "Closing stages are 'from concept and design, through implementation to delivery', followed by 'so the innovation can have the greatest impact'. Approved three-node visual grouping is retained. The working draft remains unchanged."
   ],
   "cues": [
     {
       "pose": "definition",
       "phrase": "In this course",
-      "seconds": 0.080068,
+      "seconds": 0.07,
       "frame": 0,
-      "evidence": "Whisper phrase identification, refined to measured end of preceding acoustic silence"
+      "evidence": "Opening token estimate; visual starts at frame zero."
     },
     {
       "pose": "separate",
       "phrase": "Being a patient or carer",
-      "seconds": 13.675578,
-      "frame": 410,
-      "evidence": "Whisper phrase identification, refined to measured end of preceding acoustic silence"
+      "seconds": 13.728095,
+      "frame": 412,
+      "evidence": "Local Whisper phrase identification, refined to measured end of preceding acoustic silence."
     },
     {
       "pose": "invited",
-      "phrase": "What matters here is the role",
-      "seconds": 21.540113,
-      "frame": 646,
-      "evidence": "Whisper phrase identification, refined to measured end of preceding acoustic silence"
+      "phrase": "What matters is the role",
+      "seconds": 21.285964,
+      "frame": 639,
+      "evidence": "Local Whisper phrase identification, refined to measured end of preceding acoustic silence."
     },
     {
       "pose": "need",
       "phrase": "helping a team understand a need",
-      "seconds": 25.22932,
-      "frame": 757,
-      "evidence": "Whisper phrase identification, refined to measured end of preceding acoustic silence"
+      "seconds": 24.561746,
+      "frame": 737,
+      "evidence": "Local Whisper phrase identification, refined to measured end of preceding acoustic silence."
     },
     {
       "pose": "assumption",
       "phrase": "question an assumption",
-      "seconds": 27.512063,
-      "frame": 825,
-      "evidence": "Whisper phrase identification, refined to measured end of preceding acoustic silence"
+      "seconds": 26.717483,
+      "frame": 802,
+      "evidence": "Local Whisper phrase identification, refined to measured end of preceding acoustic silence."
     },
     {
       "pose": "options",
       "phrase": "consider options",
-      "seconds": 29.030567,
-      "frame": 871,
-      "evidence": "Whisper phrase identification, refined to measured end of preceding acoustic silence"
+      "seconds": 28.304694,
+      "frame": 849,
+      "evidence": "Local Whisper phrase identification, refined to measured end of preceding acoustic silence."
     },
     {
       "pose": "decision",
-      "phrase": "or make a decision",
-      "seconds": 30.215828,
-      "frame": 906,
-      "evidence": "Whisper phrase identification, refined to measured end of preceding acoustic silence"
+      "phrase": "or inform a decision",
+      "seconds": 29.529116,
+      "frame": 886,
+      "evidence": "Local Whisper phrase identification, refined to measured end of preceding acoustic silence."
     },
     {
       "pose": "expertise",
-      "phrase": "The role of people with lived experience",
-      "seconds": 32.263968,
-      "frame": 968,
-      "evidence": "Whisper phrase identification, refined to measured end of preceding acoustic silence"
+      "phrase": "People with lived experience do not need to become overnight experts",
+      "seconds": 31.848163,
+      "frame": 955,
+      "evidence": "Local Whisper phrase identification, refined to measured end of preceding acoustic silence."
     },
     {
       "pose": "voices",
-      "phrase": "It's always important to consider whose lived experience voices",
-      "seconds": 46.881655,
-      "frame": 1406,
-      "evidence": "Whisper phrase identification, refined to measured end of preceding acoustic silence"
-    },
-    {
-      "pose": "summary",
-      "phrase": "Closing purpose clause following delivery; visual recap, not additional spoken copy",
-      "seconds": 56.86356,
-      "frame": 1706,
-      "evidence": "Acoustic pause after delivery; editorial recap over existing closing clause"
+      "phrase": "It is also important to consider whose lived experience voices",
+      "seconds": 45.588186,
+      "frame": 1368,
+      "evidence": "Local Whisper phrase identification, refined to measured end of preceding acoustic silence."
     }
   ],
   "subCues": [
     {
       "name": "relevantExperience",
       "phrase": "relevant lived experience",
-      "seconds": 2.52,
-      "frame": 76
+      "seconds": 2.5,
+      "frame": 75
     },
     {
       "name": "includingCarers",
       "phrase": "including carers",
-      "seconds": 6.956939,
-      "frame": 209
+      "seconds": 6.779365,
+      "frame": 203
     },
     {
       "name": "knowledgeContribution",
-      "phrase": "who contribute their knowledge and perspectives",
-      "seconds": 8.398231,
-      "frame": 252
+      "phrase": "They contribute their knowledge and perspectives",
+      "seconds": 8.484717,
+      "frame": 255
     },
     {
       "name": "informShape",
       "phrase": "inform and shape innovation",
-      "seconds": 10.81,
-      "frame": 324
+      "seconds": 11.08,
+      "frame": 332
+    },
+    {
+      "name": "technicalExpertise",
+      "phrase": "become overnight experts in science or technology",
+      "seconds": 34.02,
+      "frame": 1021
     },
     {
       "name": "realisticPerspective",
-      "phrase": "It is to bring a relevant and realistic perspective",
-      "seconds": 38.370023,
-      "frame": 1151
+      "phrase": "a relevant and realistic perspective",
+      "seconds": 40.303107,
+      "frame": 1209
     },
     {
       "name": "teamMember",
-      "phrase": "as a team member",
-      "seconds": 41.43,
-      "frame": 1243
+      "phrase": "can help make an innovation better (legacy cue name; no team-member claim)",
+      "seconds": 42.753946,
+      "frame": 1283
     },
     {
       "name": "concept",
-      "phrase": "inform the concept",
-      "seconds": 51,
-      "frame": 1530
+      "phrase": "from concept",
+      "seconds": 51.18,
+      "frame": 1535
     },
     {
       "name": "designImplementation",
-      "phrase": "the design and implementation",
-      "seconds": 52.468753,
-      "frame": 1574
+      "phrase": "and design, through implementation",
+      "seconds": 51.77,
+      "frame": 1553
     },
     {
       "name": "delivery",
-      "phrase": "the delivery",
-      "seconds": 55.897211,
-      "frame": 1677
+      "phrase": "to delivery",
+      "seconds": 53.763741,
+      "frame": 1613
     }
   ],
   "silences": [
     {
-      "start": 0,
-      "end": 0.080068
+      "start": 0.925261,
+      "end": 1.123832
     },
     {
-      "start": 0.94619,
-      "end": 1.124694
+      "start": 6.501156,
+      "end": 6.779365
     },
     {
-      "start": 6.586599,
-      "end": 6.956939
+      "start": 7.900023,
+      "end": 8.484717
     },
     {
-      "start": 8.000816,
-      "end": 8.27898
+      "start": 12.556304,
+      "end": 13.728095
     },
     {
-      "start": 8.279025,
-      "end": 8.398231
+      "start": 16.553469,
+      "end": 16.888209
     },
     {
-      "start": 12.56737,
-      "end": 13.675578
+      "start": 20.678776,
+      "end": 21.285964
     },
     {
-      "start": 16.412971,
-      "end": 16.705329
+      "start": 23.942857,
+      "end": 24.561746
     },
     {
-      "start": 20.829569,
-      "end": 21.540113
+      "start": 26.290227,
+      "end": 26.717483
     },
     {
-      "start": 24.632789,
-      "end": 25.22932
+      "start": 27.925261,
+      "end": 28.304694
     },
     {
-      "start": 27.079116,
-      "end": 27.512063
+      "start": 29.328254,
+      "end": 29.529116
     },
     {
-      "start": 28.617052,
-      "end": 29.030567
+      "start": 30.741043,
+      "end": 31.848163
     },
     {
-      "start": 30.076939,
-      "end": 30.215828
+      "start": 36.989751,
+      "end": 37.554717
     },
     {
-      "start": 31.139909,
-      "end": 32.263968
+      "start": 39.917596,
+      "end": 40.303107
     },
     {
-      "start": 34.215057,
-      "end": 34.29551
+      "start": 42.606757,
+      "end": 42.753946
     },
     {
-      "start": 35.318322,
-      "end": 35.402494
+      "start": 44.594671,
+      "end": 45.588186
     },
     {
-      "start": 37.805465,
-      "end": 38.251497
+      "start": 50.489002,
+      "end": 50.901927
     },
     {
-      "start": 38.277846,
-      "end": 38.370023
+      "start": 52.22449,
+      "end": 52.500136
     },
     {
-      "start": 42.026712,
-      "end": 42.328503
+      "start": 53.634853,
+      "end": 53.763741
     },
     {
-      "start": 43.90542,
-      "end": 44.034172
+      "start": 54.378005,
+      "end": 54.805034
     },
     {
-      "start": 44.347279,
-      "end": 44.437959
+      "start": 56.984626,
+      "end": 57.12
     },
     {
-      "start": 45.766417,
-      "end": 46.881655
-    },
-    {
-      "start": 52.149002,
-      "end": 52.468753
-    },
-    {
-      "start": 54.2539,
-      "end": 54.606304
-    },
-    {
-      "start": 55.606848,
-      "end": 55.897211
-    },
-    {
-      "start": 56.578798,
-      "end": 56.86356
-    },
-    {
-      "start": 58.819184,
-      "end": 58.94644
-    },
-    {
-      "start": 59.009365,
-      "end": 59.167347
+      "start": 57.162585,
+      "end": 57.312653
     }
   ],
   "segments": [
     {
       "text": "In this course, consumers are people with relevant lived experience",
       "startMs": 0,
-      "endMs": 4040,
+      "endMs": 3910,
       "tokens": [
         {
           "text": " In",
-          "startMs": 80,
+          "startMs": 70,
           "endMs": 140,
-          "confidence": 0.976915
+          "confidence": 0.978661
         },
         {
           "text": " this",
           "startMs": 140,
-          "endMs": 340,
-          "confidence": 0.998803
+          "endMs": 330,
+          "confidence": 0.998807
         },
         {
           "text": " course",
           "startMs": 450,
-          "endMs": 840,
-          "confidence": 0.998776
+          "endMs": 830,
+          "confidence": 0.998654
         },
         {
           "text": ",",
-          "startMs": 840,
-          "endMs": 960,
-          "confidence": 0.902181
+          "startMs": 830,
+          "endMs": 920,
+          "confidence": 0.953934
         },
         {
           "text": " consumers",
-          "startMs": 1130,
+          "startMs": 1160,
           "endMs": 1590,
-          "confidence": 0.962281
+          "confidence": 0.922189
         },
         {
           "text": " are",
           "startMs": 1590,
           "endMs": 1790,
-          "confidence": 0.991983
+          "confidence": 0.994548
         },
         {
           "text": " people",
           "startMs": 1790,
           "endMs": 2200,
-          "confidence": 0.992091
+          "confidence": 0.991991
         },
         {
           "text": " with",
           "startMs": 2200,
-          "endMs": 2400,
-          "confidence": 0.903779
+          "endMs": 2380,
+          "confidence": 0.892409
         },
         {
           "text": " relevant",
-          "startMs": 2520,
-          "endMs": 2890,
-          "confidence": 0.943145
+          "startMs": 2500,
+          "endMs": 2870,
+          "confidence": 0.929309
         },
         {
           "text": " lived",
-          "startMs": 2950,
-          "endMs": 3200,
-          "confidence": 0.831175
+          "startMs": 2930,
+          "endMs": 3120,
+          "confidence": 0.799113
         },
         {
           "text": " experience",
-          "startMs": 3200,
-          "endMs": 3980,
-          "confidence": 0.885256
+          "startMs": 3190,
+          "endMs": 3910,
+          "confidence": 0.902786
         }
       ]
     },
     {
-      "text": "and expertise of a health condition or issue,",
-      "startMs": 4040,
-      "endMs": 6840,
+      "text": "and expertise of a health condition or issue, including carers.",
+      "startMs": 3910,
+      "endMs": 8000,
       "tokens": [
         {
           "text": " and",
-          "startMs": 4040,
-          "endMs": 4150,
-          "confidence": 0.795075
+          "startMs": 3910,
+          "endMs": 4060,
+          "confidence": 0.831983
         },
         {
           "text": " expertise",
-          "startMs": 4200,
-          "endMs": 4940,
-          "confidence": 0.919884
+          "startMs": 4130,
+          "endMs": 4830,
+          "confidence": 0.921904
         },
         {
           "text": " of",
-          "startMs": 4980,
-          "endMs": 5040,
-          "confidence": 0.860141
+          "startMs": 4880,
+          "endMs": 5000,
+          "confidence": 0.776013
         },
         {
           "text": " a",
-          "startMs": 5040,
-          "endMs": 5120,
-          "confidence": 0.722119
+          "startMs": 5000,
+          "endMs": 5040,
+          "confidence": 0.686281
         },
         {
           "text": " health",
-          "startMs": 5120,
-          "endMs": 5400,
-          "confidence": 0.959151
+          "startMs": 5040,
+          "endMs": 5340,
+          "confidence": 0.96668
         },
         {
           "text": " condition",
-          "startMs": 5500,
-          "endMs": 5920,
-          "confidence": 0.966772
+          "startMs": 5440,
+          "endMs": 5840,
+          "confidence": 0.976297
         },
         {
           "text": " or",
-          "startMs": 5920,
-          "endMs": 6120,
-          "confidence": 0.899595
+          "startMs": 5840,
+          "endMs": 6050,
+          "confidence": 0.931132
         },
         {
           "text": " issue",
-          "startMs": 6170,
-          "endMs": 6570,
-          "confidence": 0.947912
+          "startMs": 6100,
+          "endMs": 6490,
+          "confidence": 0.971916
         },
         {
           "text": ",",
-          "startMs": 6710,
-          "endMs": 6840,
-          "confidence": 0.712258
-        }
-      ]
-    },
-    {
-      "text": "including carers, who contribute their knowledge and perspectives to",
-      "startMs": 6840,
-      "endMs": 10810,
-      "tokens": [
+          "startMs": 6770,
+          "endMs": 6770,
+          "confidence": 0.806581
+        },
         {
           "text": " including",
-          "startMs": 6920,
-          "endMs": 7570,
-          "confidence": 0.994841
+          "startMs": 6780,
+          "endMs": 7320,
+          "confidence": 0.684924
         },
         {
           "text": " care",
-          "startMs": 7620,
-          "endMs": 7750,
-          "confidence": 0.99201
+          "startMs": 7400,
+          "endMs": 7650,
+          "confidence": 0.972926
         },
         {
           "text": "rs",
-          "startMs": 7970,
-          "endMs": 8130,
-          "confidence": 0.998492
-        },
-        {
-          "text": ",",
-          "startMs": 8260,
-          "endMs": 8320,
-          "confidence": 0.770574
-        },
-        {
-          "text": " who",
-          "startMs": 8320,
-          "endMs": 8480,
-          "confidence": 0.969786
-        },
-        {
-          "text": " contribute",
-          "startMs": 8480,
-          "endMs": 9010,
-          "confidence": 0.999706
-        },
-        {
-          "text": " their",
-          "startMs": 9010,
-          "endMs": 9240,
-          "confidence": 0.998734
-        },
-        {
-          "text": " knowledge",
-          "startMs": 9360,
-          "endMs": 9730,
-          "confidence": 0.999506
-        },
-        {
-          "text": " and",
-          "startMs": 9790,
-          "endMs": 9900,
-          "confidence": 0.990074
-        },
-        {
-          "text": " perspectives",
-          "startMs": 9900,
-          "endMs": 10560,
-          "confidence": 0.989831
-        },
-        {
-          "text": " to",
-          "startMs": 10560,
-          "endMs": 10690,
-          "confidence": 0.967881
-        }
-      ]
-    },
-    {
-      "text": "inform and shape innovation.",
-      "startMs": 10810,
-      "endMs": 12600,
-      "tokens": [
-        {
-          "text": " inform",
-          "startMs": 10810,
-          "endMs": 11120,
-          "confidence": 0.997988
-        },
-        {
-          "text": " and",
-          "startMs": 11120,
-          "endMs": 11330,
-          "confidence": 0.996803
-        },
-        {
-          "text": " shape",
-          "startMs": 11330,
-          "endMs": 11680,
-          "confidence": 0.999136
-        },
-        {
-          "text": " innovation",
-          "startMs": 11680,
-          "endMs": 12380,
-          "confidence": 0.997736
+          "startMs": 7650,
+          "endMs": 7770,
+          "confidence": 0.99861
         },
         {
           "text": ".",
-          "startMs": 12380,
-          "endMs": 12600,
-          "confidence": 0.990004
+          "startMs": 7770,
+          "endMs": 7900,
+          "confidence": 0.974667
         }
       ]
     },
     {
-      "text": "Being a patient or carer gives someone experience, but it does not",
-      "startMs": 12600,
-      "endMs": 17320,
+      "text": "They contribute their knowledge and perspectives to inform and shape",
+      "startMs": 8000,
+      "endMs": 12030,
       "tokens": [
         {
-          "text": " Being",
-          "startMs": 12680,
-          "endMs": 13060,
-          "confidence": 0.998253
+          "text": " They",
+          "startMs": 8070,
+          "endMs": 8270,
+          "confidence": 0.996873
         },
         {
-          "text": " a",
-          "startMs": 13070,
-          "endMs": 13160,
-          "confidence": 0.997664
+          "text": " contribute",
+          "startMs": 8270,
+          "endMs": 8870,
+          "confidence": 0.999348
         },
         {
-          "text": " patient",
-          "startMs": 13160,
-          "endMs": 13810,
-          "confidence": 0.999754
+          "text": " their",
+          "startMs": 9120,
+          "endMs": 9300,
+          "confidence": 0.99875
         },
         {
-          "text": " or",
-          "startMs": 13810,
-          "endMs": 13860,
-          "confidence": 0.997075
+          "text": " knowledge",
+          "startMs": 9300,
+          "endMs": 9800,
+          "confidence": 0.999657
         },
         {
-          "text": " care",
-          "startMs": 14020,
-          "endMs": 14360,
-          "confidence": 0.989034
+          "text": " and",
+          "startMs": 9910,
+          "endMs": 10120,
+          "confidence": 0.99818
         },
         {
-          "text": "r",
-          "startMs": 14360,
-          "endMs": 14410,
-          "confidence": 0.998811
+          "text": " perspectives",
+          "startMs": 10120,
+          "endMs": 10950,
+          "confidence": 0.993104
         },
         {
-          "text": " gives",
-          "startMs": 14510,
-          "endMs": 14920,
-          "confidence": 0.981688
+          "text": " to",
+          "startMs": 10950,
+          "endMs": 11080,
+          "confidence": 0.99747
         },
         {
-          "text": " someone",
-          "startMs": 14920,
-          "endMs": 15570,
-          "confidence": 0.997858
+          "text": " inform",
+          "startMs": 11080,
+          "endMs": 11490,
+          "confidence": 0.997276
         },
         {
-          "text": " experience",
-          "startMs": 15570,
-          "endMs": 16450,
-          "confidence": 0.998969
+          "text": " and",
+          "startMs": 11490,
+          "endMs": 11690,
+          "confidence": 0.997242
         },
         {
-          "text": ",",
-          "startMs": 16570,
-          "endMs": 16640,
-          "confidence": 0.839242
-        },
-        {
-          "text": " but",
-          "startMs": 16640,
-          "endMs": 16740,
-          "confidence": 0.501527
-        },
-        {
-          "text": " it",
-          "startMs": 16800,
-          "endMs": 16850,
-          "confidence": 0.989549
-        },
-        {
-          "text": " does",
-          "startMs": 16850,
-          "endMs": 16980,
-          "confidence": 0.996597
-        },
-        {
-          "text": " not",
-          "startMs": 17060,
-          "endMs": 17320,
-          "confidence": 0.985526
-        }
-      ]
-    },
-    {
-      "text": "automatically mean they are being involved in developing an",
-      "startMs": 17320,
-      "endMs": 20200,
-      "tokens": [
-        {
-          "text": " automatically",
-          "startMs": 17320,
-          "endMs": 18000,
-          "confidence": 0.979012
-        },
-        {
-          "text": " mean",
-          "startMs": 18100,
-          "endMs": 18360,
-          "confidence": 0.963043
-        },
-        {
-          "text": " they",
-          "startMs": 18360,
-          "endMs": 18480,
-          "confidence": 0.775614
-        },
-        {
-          "text": " are",
-          "startMs": 18480,
-          "endMs": 18560,
-          "confidence": 0.954563
-        },
-        {
-          "text": " being",
-          "startMs": 18610,
-          "endMs": 18800,
-          "confidence": 0.900155
-        },
-        {
-          "text": " involved",
-          "startMs": 18800,
-          "endMs": 19180,
-          "confidence": 0.946604
-        },
-        {
-          "text": " in",
-          "startMs": 19480,
-          "endMs": 19480,
-          "confidence": 0.891543
-        },
-        {
-          "text": " developing",
-          "startMs": 19580,
-          "endMs": 20050,
-          "confidence": 0.967833
-        },
-        {
-          "text": " an",
-          "startMs": 20110,
-          "endMs": 20200,
-          "confidence": 0.942727
+          "text": " shape",
+          "startMs": 11690,
+          "endMs": 12030,
+          "confidence": 0.999296
         }
       ]
     },
     {
       "text": "innovation.",
-      "startMs": 20200,
-      "endMs": 21440,
+      "startMs": 12030,
+      "endMs": 13000,
       "tokens": [
         {
           "text": " innovation",
-          "startMs": 20200,
-          "endMs": 21150,
-          "confidence": 0.980968
+          "startMs": 12030,
+          "endMs": 12720,
+          "confidence": 0.998108
         },
         {
           "text": ".",
-          "startMs": 21150,
-          "endMs": 21440,
-          "confidence": 0.993871
+          "startMs": 12720,
+          "endMs": 12990,
+          "confidence": 0.988106
         }
       ]
     },
     {
-      "text": "What matters here is the role they are being invited to play, helping",
-      "startMs": 21440,
-      "endMs": 25820,
+      "text": "Being a patient or carer gives someone experience, but it does not",
+      "startMs": 13000,
+      "endMs": 17500,
       "tokens": [
         {
-          "text": " What",
-          "startMs": 21520,
-          "endMs": 21740,
-          "confidence": 0.958387
-        },
-        {
-          "text": " matters",
-          "startMs": 21740,
-          "endMs": 22170,
-          "confidence": 0.999329
-        },
-        {
-          "text": " here",
-          "startMs": 22260,
-          "endMs": 22350,
-          "confidence": 0.998308
-        },
-        {
-          "text": " is",
-          "startMs": 22570,
-          "endMs": 22720,
-          "confidence": 0.980748
-        },
-        {
-          "text": " the",
-          "startMs": 22860,
-          "endMs": 22940,
-          "confidence": 0.999077
-        },
-        {
-          "text": " role",
-          "startMs": 22940,
-          "endMs": 23240,
-          "confidence": 0.999199
-        },
-        {
-          "text": " they",
-          "startMs": 23240,
-          "endMs": 23480,
-          "confidence": 0.998178
-        },
-        {
-          "text": " are",
-          "startMs": 23550,
-          "endMs": 23760,
-          "confidence": 0.993566
-        },
-        {
-          "text": " being",
-          "startMs": 23760,
-          "endMs": 24130,
-          "confidence": 0.99968
-        },
-        {
-          "text": " invited",
-          "startMs": 24130,
-          "endMs": 24660,
-          "confidence": 0.999226
-        },
-        {
-          "text": " to",
-          "startMs": 24660,
-          "endMs": 24810,
-          "confidence": 0.999523
-        },
-        {
-          "text": " play",
-          "startMs": 24810,
-          "endMs": 25160,
-          "confidence": 0.999743
-        },
-        {
-          "text": ",",
-          "startMs": 25160,
-          "endMs": 25290,
-          "confidence": 0.516003
-        },
-        {
-          "text": " helping",
-          "startMs": 25410,
-          "endMs": 25800,
-          "confidence": 0.799613
-        }
-      ]
-    },
-    {
-      "text": "a team understand a need, question an assumption,",
-      "startMs": 25820,
-      "endMs": 28920,
-      "tokens": [
-        {
-          "text": " a",
-          "startMs": 25820,
-          "endMs": 25820,
-          "confidence": 0.998399
-        },
-        {
-          "text": " team",
-          "startMs": 25900,
-          "endMs": 26150,
-          "confidence": 0.99942
-        },
-        {
-          "text": " understand",
-          "startMs": 26150,
-          "endMs": 26840,
-          "confidence": 0.995027
+          "text": " Being",
+          "startMs": 13070,
+          "endMs": 13460,
+          "confidence": 0.991038
         },
         {
           "text": " a",
-          "startMs": 26940,
-          "endMs": 26940,
-          "confidence": 0.982598
+          "startMs": 13460,
+          "endMs": 13560,
+          "confidence": 0.995786
         },
         {
-          "text": " need",
-          "startMs": 26940,
-          "endMs": 27220,
-          "confidence": 0.996417
+          "text": " patient",
+          "startMs": 13560,
+          "endMs": 14220,
+          "confidence": 0.999565
         },
         {
-          "text": ",",
-          "startMs": 27220,
-          "endMs": 27400,
-          "confidence": 0.979449
+          "text": " or",
+          "startMs": 14220,
+          "endMs": 14360,
+          "confidence": 0.997664
         },
         {
-          "text": " question",
-          "startMs": 27400,
-          "endMs": 27940,
-          "confidence": 0.897205
+          "text": " care",
+          "startMs": 14410,
+          "endMs": 14790,
+          "confidence": 0.98977
         },
         {
-          "text": " an",
-          "startMs": 27940,
-          "endMs": 28030,
-          "confidence": 0.911762
+          "text": "r",
+          "startMs": 14790,
+          "endMs": 14810,
+          "confidence": 0.998797
         },
         {
-          "text": " assumption",
-          "startMs": 28410,
-          "endMs": 28770,
-          "confidence": 0.993231
+          "text": " gives",
+          "startMs": 14910,
+          "endMs": 15310,
+          "confidence": 0.990386
         },
         {
-          "text": ",",
-          "startMs": 28770,
-          "endMs": 28840,
-          "confidence": 0.968901
-        }
-      ]
-    },
-    {
-      "text": "consider options or make a decision.",
-      "startMs": 28920,
-      "endMs": 32160,
-      "tokens": [
-        {
-          "text": " consider",
-          "startMs": 29000,
-          "endMs": 29650,
+          "text": " someone",
+          "startMs": 15500,
+          "endMs": 16010,
           "confidence": 0.997691
         },
         {
-          "text": " options",
-          "startMs": 29750,
-          "endMs": 30380,
-          "confidence": 0.998936
-        },
-        {
-          "text": " or",
-          "startMs": 30380,
-          "endMs": 30570,
-          "confidence": 0.622653
-        },
-        {
-          "text": " make",
-          "startMs": 30570,
-          "endMs": 30960,
-          "confidence": 0.999096
-        },
-        {
-          "text": " a",
-          "startMs": 30960,
-          "endMs": 31050,
-          "confidence": 0.998719
-        },
-        {
-          "text": " decision",
-          "startMs": 31050,
-          "endMs": 31810,
-          "confidence": 0.998449
-        },
-        {
-          "text": ".",
-          "startMs": 31820,
-          "endMs": 32160,
-          "confidence": 0.993722
-        }
-      ]
-    },
-    {
-      "text": "The role of people with lived experience is not to become an",
-      "startMs": 32160,
-      "endMs": 35470,
-      "tokens": [
-        {
-          "text": " The",
-          "startMs": 32240,
-          "endMs": 32360,
-          "confidence": 0.998681
-        },
-        {
-          "text": " role",
-          "startMs": 32360,
-          "endMs": 32500,
-          "confidence": 0.999081
-        },
-        {
-          "text": " of",
-          "startMs": 32630,
-          "endMs": 32760,
-          "confidence": 0.999146
-        },
-        {
-          "text": " people",
-          "startMs": 32760,
-          "endMs": 33080,
-          "confidence": 0.994719
-        },
-        {
-          "text": " with",
-          "startMs": 33290,
-          "endMs": 33440,
-          "confidence": 0.99934
-        },
-        {
-          "text": " lived",
-          "startMs": 33580,
-          "endMs": 33780,
-          "confidence": 0.995258
-        },
-        {
           "text": " experience",
-          "startMs": 33780,
-          "endMs": 34470,
-          "confidence": 0.998658
+          "startMs": 16010,
+          "endMs": 17000,
+          "confidence": 0.999041
         },
         {
-          "text": " is",
-          "startMs": 34470,
-          "endMs": 34560,
-          "confidence": 0.996508
+          "text": ",",
+          "startMs": 17000,
+          "endMs": 17060,
+          "confidence": 0.817847
+        },
+        {
+          "text": " but",
+          "startMs": 17130,
+          "endMs": 17180,
+          "confidence": 0.910031
+        },
+        {
+          "text": " it",
+          "startMs": 17180,
+          "endMs": 17230,
+          "confidence": 0.990707
+        },
+        {
+          "text": " does",
+          "startMs": 17250,
+          "endMs": 17310,
+          "confidence": 0.996464
         },
         {
           "text": " not",
-          "startMs": 34680,
-          "endMs": 34800,
-          "confidence": 0.997645
-        },
-        {
-          "text": " to",
-          "startMs": 34800,
-          "endMs": 34890,
-          "confidence": 0.999241
-        },
-        {
-          "text": " become",
-          "startMs": 34930,
-          "endMs": 35260,
-          "confidence": 0.998601
-        },
-        {
-          "text": " an",
-          "startMs": 35350,
-          "endMs": 35470,
-          "confidence": 0.996451
+          "startMs": 17390,
+          "endMs": 17460,
+          "confidence": 0.994947
         }
       ]
     },
     {
-      "text": "overnight expert in science or technology.",
-      "startMs": 35470,
-      "endMs": 38240,
+      "text": "automatically mean they are involved in developing an innovation.",
+      "startMs": 17500,
+      "endMs": 21000,
       "tokens": [
         {
-          "text": " overnight",
-          "startMs": 35470,
-          "endMs": 36030,
-          "confidence": 0.993828
+          "text": " automatically",
+          "startMs": 17500,
+          "endMs": 17990,
+          "confidence": 0.994031
         },
         {
-          "text": " expert",
-          "startMs": 36130,
-          "endMs": 36500,
-          "confidence": 0.997094
+          "text": " mean",
+          "startMs": 18000,
+          "endMs": 18260,
+          "confidence": 0.98296
         },
         {
-          "text": " in",
-          "startMs": 36530,
-          "endMs": 36630,
-          "confidence": 0.998422
-        },
-        {
-          "text": " science",
-          "startMs": 36630,
-          "endMs": 37100,
-          "confidence": 0.992909
-        },
-        {
-          "text": " or",
-          "startMs": 37100,
-          "endMs": 37230,
-          "confidence": 0.995858
-        },
-        {
-          "text": " technology",
-          "startMs": 37260,
-          "endMs": 37920,
-          "confidence": 0.998725
-        },
-        {
-          "text": ".",
-          "startMs": 37920,
-          "endMs": 38240,
-          "confidence": 0.544827
-        }
-      ]
-    },
-    {
-      "text": "It is to bring a relevant and realistic perspective as a team member",
-      "startMs": 38240,
-      "endMs": 42280,
-      "tokens": [
-        {
-          "text": " It",
-          "startMs": 38320,
-          "endMs": 38380,
-          "confidence": 0.997219
-        },
-        {
-          "text": " is",
-          "startMs": 38380,
-          "endMs": 38520,
-          "confidence": 0.998666
-        },
-        {
-          "text": " to",
-          "startMs": 38520,
-          "endMs": 38580,
-          "confidence": 0.999466
-        },
-        {
-          "text": " bring",
-          "startMs": 38690,
-          "endMs": 39000,
-          "confidence": 0.999089
-        },
-        {
-          "text": " a",
-          "startMs": 39010,
-          "endMs": 39080,
-          "confidence": 0.994188
-        },
-        {
-          "text": " relevant",
-          "startMs": 39080,
-          "endMs": 39630,
-          "confidence": 0.998791
-        },
-        {
-          "text": " and",
-          "startMs": 39660,
-          "endMs": 39860,
-          "confidence": 0.996485
-        },
-        {
-          "text": " realistic",
-          "startMs": 39860,
-          "endMs": 40460,
-          "confidence": 0.998193
-        },
-        {
-          "text": " perspective",
-          "startMs": 40510,
-          "endMs": 41280,
-          "confidence": 0.998508
-        },
-        {
-          "text": " as",
-          "startMs": 41280,
-          "endMs": 41340,
-          "confidence": 0.977331
-        },
-        {
-          "text": " a",
-          "startMs": 41430,
-          "endMs": 41490,
-          "confidence": 0.997132
-        },
-        {
-          "text": " team",
-          "startMs": 41490,
-          "endMs": 41770,
-          "confidence": 0.999083
-        },
-        {
-          "text": " member",
-          "startMs": 41770,
-          "endMs": 42220,
-          "confidence": 0.996748
-        }
-      ]
-    },
-    {
-      "text": "to make the concept or project even better than what it could have",
-      "startMs": 42280,
-      "endMs": 46130,
-      "tokens": [
-        {
-          "text": " to",
-          "startMs": 42280,
-          "endMs": 42360,
-          "confidence": 0.592997
-        },
-        {
-          "text": " make",
-          "startMs": 42360,
-          "endMs": 42580,
-          "confidence": 0.997406
-        },
-        {
-          "text": " the",
-          "startMs": 42610,
-          "endMs": 42790,
-          "confidence": 0.994907
-        },
-        {
-          "text": " concept",
-          "startMs": 42830,
-          "endMs": 43180,
-          "confidence": 0.995154
-        },
-        {
-          "text": " or",
-          "startMs": 43240,
-          "endMs": 43390,
-          "confidence": 0.972537
-        },
-        {
-          "text": " project",
-          "startMs": 43390,
-          "endMs": 43920,
-          "confidence": 0.996573
-        },
-        {
-          "text": " even",
-          "startMs": 43920,
-          "endMs": 44200,
-          "confidence": 0.94193
-        },
-        {
-          "text": " better",
-          "startMs": 44250,
-          "endMs": 44700,
-          "confidence": 0.998471
-        },
-        {
-          "text": " than",
-          "startMs": 44700,
-          "endMs": 44840,
-          "confidence": 0.995431
-        },
-        {
-          "text": " what",
-          "startMs": 45200,
-          "endMs": 45320,
-          "confidence": 0.993017
-        },
-        {
-          "text": " it",
-          "startMs": 45330,
-          "endMs": 45470,
-          "confidence": 0.999077
-        },
-        {
-          "text": " could",
-          "startMs": 45470,
-          "endMs": 45860,
-          "confidence": 0.997581
-        },
-        {
-          "text": " have",
-          "startMs": 45860,
-          "endMs": 46130,
-          "confidence": 0.95317
-        }
-      ]
-    },
-    {
-      "text": "been.",
-      "startMs": 46130,
-      "endMs": 46760,
-      "tokens": [
-        {
-          "text": " been",
-          "startMs": 46130,
-          "endMs": 46410,
-          "confidence": 0.999152
-        },
-        {
-          "text": ".",
-          "startMs": 46640,
-          "endMs": 46760,
-          "confidence": 0.998085
-        }
-      ]
-    },
-    {
-      "text": "It's always important to consider whose lived experience voices are",
-      "startMs": 46760,
-      "endMs": 50390,
-      "tokens": [
-        {
-          "text": " It",
-          "startMs": 46840,
-          "endMs": 46880,
-          "confidence": 0.662669
-        },
-        {
-          "text": "'s",
-          "startMs": 46880,
-          "endMs": 47000,
-          "confidence": 0.915728
-        },
-        {
-          "text": " always",
-          "startMs": 47000,
-          "endMs": 47380,
-          "confidence": 0.997889
-        },
-        {
-          "text": " important",
-          "startMs": 47380,
-          "endMs": 47950,
-          "confidence": 0.999699
-        },
-        {
-          "text": " to",
-          "startMs": 47950,
-          "endMs": 48070,
-          "confidence": 0.99976
-        },
-        {
-          "text": " consider",
-          "startMs": 48110,
-          "endMs": 48570,
-          "confidence": 0.999706
-        },
-        {
-          "text": " whose",
-          "startMs": 48570,
-          "endMs": 48880,
-          "confidence": 0.944301
-        },
-        {
-          "text": " lived",
-          "startMs": 48880,
-          "endMs": 49150,
-          "confidence": 0.995494
-        },
-        {
-          "text": " experience",
-          "startMs": 49280,
-          "endMs": 49820,
-          "confidence": 0.981598
-        },
-        {
-          "text": " voices",
-          "startMs": 49820,
-          "endMs": 50090,
-          "confidence": 0.996284
+          "text": " they",
+          "startMs": 18260,
+          "endMs": 18520,
+          "confidence": 0.966885
         },
         {
           "text": " are",
-          "startMs": 50250,
-          "endMs": 50390,
-          "confidence": 0.993511
-        }
-      ]
-    },
-    {
-      "text": "needed to inform the concept,",
-      "startMs": 50390,
-      "endMs": 52360,
-      "tokens": [
-        {
-          "text": " needed",
-          "startMs": 50390,
-          "endMs": 50840,
-          "confidence": 0.998974
+          "startMs": 18520,
+          "endMs": 18700,
+          "confidence": 0.988169
         },
         {
-          "text": " to",
-          "startMs": 50840,
-          "endMs": 51000,
-          "confidence": 0.986412
+          "text": " involved",
+          "startMs": 18700,
+          "endMs": 19230,
+          "confidence": 0.99455
         },
         {
-          "text": " inform",
-          "startMs": 51000,
-          "endMs": 51500,
-          "confidence": 0.998639
+          "text": " in",
+          "startMs": 19230,
+          "endMs": 19360,
+          "confidence": 0.994334
         },
         {
-          "text": " the",
-          "startMs": 51500,
-          "endMs": 51700,
-          "confidence": 0.989649
+          "text": " developing",
+          "startMs": 19360,
+          "endMs": 19930,
+          "confidence": 0.996428
         },
         {
-          "text": " concept",
-          "startMs": 51760,
-          "endMs": 52360,
-          "confidence": 0.995712
+          "text": " an",
+          "startMs": 20020,
+          "endMs": 20140,
+          "confidence": 0.982085
         },
         {
-          "text": ",",
-          "startMs": 52360,
-          "endMs": 52360,
-          "confidence": 0.9252
-        }
-      ]
-    },
-    {
-      "text": "the design and implementation and, lastly, the delivery to ensure it",
-      "startMs": 52360,
-      "endMs": 57160,
-      "tokens": [
-        {
-          "text": " the",
-          "startMs": 52440,
-          "endMs": 52600,
-          "confidence": 0.985451
-        },
-        {
-          "text": " design",
-          "startMs": 52600,
-          "endMs": 53080,
-          "confidence": 0.999291
-        },
-        {
-          "text": " and",
-          "startMs": 53080,
-          "endMs": 53280,
-          "confidence": 0.975911
-        },
-        {
-          "text": " implementation",
-          "startMs": 53490,
-          "endMs": 54400,
-          "confidence": 0.993521
-        },
-        {
-          "text": " and",
-          "startMs": 54470,
-          "endMs": 54680,
-          "confidence": 0.786168
-        },
-        {
-          "text": ",",
-          "startMs": 54680,
-          "endMs": 54750,
-          "confidence": 0.618631
-        },
-        {
-          "text": " last",
-          "startMs": 54880,
-          "endMs": 55160,
-          "confidence": 0.999455
-        },
-        {
-          "text": "ly",
-          "startMs": 55160,
-          "endMs": 55240,
-          "confidence": 0.999903
-        },
-        {
-          "text": ",",
-          "startMs": 55310,
-          "endMs": 55460,
-          "confidence": 0.985748
-        },
-        {
-          "text": " the",
-          "startMs": 55550,
-          "endMs": 55690,
-          "confidence": 0.997649
-        },
-        {
-          "text": " delivery",
-          "startMs": 55720,
-          "endMs": 56340,
-          "confidence": 0.999666
-        },
-        {
-          "text": " to",
-          "startMs": 56400,
-          "endMs": 56510,
-          "confidence": 0.670424
-        },
-        {
-          "text": " ensure",
-          "startMs": 56560,
-          "endMs": 57000,
-          "confidence": 0.997902
-        },
-        {
-          "text": " it",
-          "startMs": 57000,
-          "endMs": 57160,
-          "confidence": 0.995695
-        }
-      ]
-    },
-    {
-      "text": "has the greatest impact.",
-      "startMs": 57160,
-      "endMs": 59040,
-      "tokens": [
-        {
-          "text": " has",
-          "startMs": 57160,
-          "endMs": 57400,
-          "confidence": 0.99915
-        },
-        {
-          "text": " the",
-          "startMs": 57400,
-          "endMs": 57640,
-          "confidence": 0.998452
-        },
-        {
-          "text": " greatest",
-          "startMs": 57640,
-          "endMs": 58280,
-          "confidence": 0.999458
-        },
-        {
-          "text": " impact",
-          "startMs": 58280,
-          "endMs": 58750,
-          "confidence": 0.999701
+          "text": " innovation",
+          "startMs": 20140,
+          "endMs": 20710,
+          "confidence": 0.996711
         },
         {
           "text": ".",
-          "startMs": 58750,
-          "endMs": 58950,
-          "confidence": 0.985231
+          "startMs": 20710,
+          "endMs": 20900,
+          "confidence": 0.990484
+        }
+      ]
+    },
+    {
+      "text": "What matters is the role they are invited to play, helping a team",
+      "startMs": 21000,
+      "endMs": 25150,
+      "tokens": [
+        {
+          "text": " What",
+          "startMs": 21070,
+          "endMs": 21290,
+          "confidence": 0.997489
+        },
+        {
+          "text": " matters",
+          "startMs": 21320,
+          "endMs": 21820,
+          "confidence": 0.998578
+        },
+        {
+          "text": " is",
+          "startMs": 21820,
+          "endMs": 21920,
+          "confidence": 0.988844
+        },
+        {
+          "text": " the",
+          "startMs": 22120,
+          "endMs": 22230,
+          "confidence": 0.998468
+        },
+        {
+          "text": " role",
+          "startMs": 22230,
+          "endMs": 22540,
+          "confidence": 0.99755
+        },
+        {
+          "text": " they",
+          "startMs": 22540,
+          "endMs": 22800,
+          "confidence": 0.996584
+        },
+        {
+          "text": " are",
+          "startMs": 22910,
+          "endMs": 23040,
+          "confidence": 0.986628
+        },
+        {
+          "text": " invited",
+          "startMs": 23110,
+          "endMs": 23620,
+          "confidence": 0.998696
+        },
+        {
+          "text": " to",
+          "startMs": 23620,
+          "endMs": 23770,
+          "confidence": 0.99934
+        },
+        {
+          "text": " play",
+          "startMs": 23770,
+          "endMs": 24080,
+          "confidence": 0.999741
+        },
+        {
+          "text": ",",
+          "startMs": 24080,
+          "endMs": 24230,
+          "confidence": 0.441906
+        },
+        {
+          "text": " helping",
+          "startMs": 24230,
+          "endMs": 24770,
+          "confidence": 0.999222
+        },
+        {
+          "text": " a",
+          "startMs": 24770,
+          "endMs": 24820,
+          "confidence": 0.997508
+        },
+        {
+          "text": " team",
+          "startMs": 24910,
+          "endMs": 25150,
+          "confidence": 0.999653
+        }
+      ]
+    },
+    {
+      "text": "understand a need, question an assumption, consider options or inform",
+      "startMs": 25150,
+      "endMs": 29930,
+      "tokens": [
+        {
+          "text": " understand",
+          "startMs": 25150,
+          "endMs": 25910,
+          "confidence": 0.998079
+        },
+        {
+          "text": " a",
+          "startMs": 25930,
+          "endMs": 26000,
+          "confidence": 0.992332
+        },
+        {
+          "text": " need",
+          "startMs": 26000,
+          "endMs": 26310,
+          "confidence": 0.999588
+        },
+        {
+          "text": ",",
+          "startMs": 26310,
+          "endMs": 26450,
+          "confidence": 0.992286
+        },
+        {
+          "text": " question",
+          "startMs": 26470,
+          "endMs": 27050,
+          "confidence": 0.998807
+        },
+        {
+          "text": " an",
+          "startMs": 27100,
+          "endMs": 27230,
+          "confidence": 0.968952
+        },
+        {
+          "text": " assumption",
+          "startMs": 27230,
+          "endMs": 27930,
+          "confidence": 0.998803
+        },
+        {
+          "text": ",",
+          "startMs": 28020,
+          "endMs": 28150,
+          "confidence": 0.995011
+        },
+        {
+          "text": " consider",
+          "startMs": 28150,
+          "endMs": 28710,
+          "confidence": 0.998837
+        },
+        {
+          "text": " options",
+          "startMs": 28710,
+          "endMs": 29320,
+          "confidence": 0.999146
+        },
+        {
+          "text": " or",
+          "startMs": 29470,
+          "endMs": 29470,
+          "confidence": 0.728975
+        },
+        {
+          "text": " inform",
+          "startMs": 29490,
+          "endMs": 29930,
+          "confidence": 0.996411
+        }
+      ]
+    },
+    {
+      "text": "a decision.",
+      "startMs": 29930,
+      "endMs": 31000,
+      "tokens": [
+        {
+          "text": " a",
+          "startMs": 29930,
+          "endMs": 30000,
+          "confidence": 0.997535
+        },
+        {
+          "text": " decision",
+          "startMs": 30000,
+          "endMs": 30620,
+          "confidence": 0.998138
+        },
+        {
+          "text": ".",
+          "startMs": 30620,
+          "endMs": 30950,
+          "confidence": 0.994182
+        }
+      ]
+    },
+    {
+      "text": "People with lived experience do not need to become overnight experts",
+      "startMs": 31000,
+      "endMs": 35180,
+      "tokens": [
+        {
+          "text": " People",
+          "startMs": 31070,
+          "endMs": 31330,
+          "confidence": 0.9977
+        },
+        {
+          "text": " with",
+          "startMs": 31450,
+          "endMs": 31720,
+          "confidence": 0.999512
+        },
+        {
+          "text": " lived",
+          "startMs": 31720,
+          "endMs": 31890,
+          "confidence": 0.99286
+        },
+        {
+          "text": " experience",
+          "startMs": 32160,
+          "endMs": 32800,
+          "confidence": 0.998133
+        },
+        {
+          "text": " do",
+          "startMs": 32800,
+          "endMs": 32950,
+          "confidence": 0.994078
+        },
+        {
+          "text": " not",
+          "startMs": 32950,
+          "endMs": 33160,
+          "confidence": 0.999127
+        },
+        {
+          "text": " need",
+          "startMs": 33160,
+          "endMs": 33370,
+          "confidence": 0.99923
+        },
+        {
+          "text": " to",
+          "startMs": 33500,
+          "endMs": 33590,
+          "confidence": 0.999539
+        },
+        {
+          "text": " become",
+          "startMs": 33590,
+          "endMs": 34020,
+          "confidence": 0.996641
+        },
+        {
+          "text": " overnight",
+          "startMs": 34020,
+          "endMs": 34670,
+          "confidence": 0.99448
+        },
+        {
+          "text": " experts",
+          "startMs": 34670,
+          "endMs": 35180,
+          "confidence": 0.998731
+        }
+      ]
+    },
+    {
+      "text": "in science or technology.",
+      "startMs": 35180,
+      "endMs": 37000,
+      "tokens": [
+        {
+          "text": " in",
+          "startMs": 35180,
+          "endMs": 35310,
+          "confidence": 0.999032
+        },
+        {
+          "text": " science",
+          "startMs": 35390,
+          "endMs": 35820,
+          "confidence": 0.990157
+        },
+        {
+          "text": " or",
+          "startMs": 35830,
+          "endMs": 35970,
+          "confidence": 0.994412
+        },
+        {
+          "text": " technology",
+          "startMs": 35970,
+          "endMs": 36700,
+          "confidence": 0.998921
+        },
+        {
+          "text": ".",
+          "startMs": 36700,
+          "endMs": 37000,
+          "confidence": 0.868068
+        }
+      ]
+    },
+    {
+      "text": "Their expertise is their lived experience, bringing a relevant and",
+      "startMs": 37000,
+      "endMs": 41130,
+      "tokens": [
+        {
+          "text": " Their",
+          "startMs": 37070,
+          "endMs": 37330,
+          "confidence": 0.994518
+        },
+        {
+          "text": " expertise",
+          "startMs": 37330,
+          "endMs": 37880,
+          "confidence": 0.998889
+        },
+        {
+          "text": " is",
+          "startMs": 38120,
+          "endMs": 38120,
+          "confidence": 0.999264
+        },
+        {
+          "text": " their",
+          "startMs": 38160,
+          "endMs": 38470,
+          "confidence": 0.99891
+        },
+        {
+          "text": " lived",
+          "startMs": 38470,
+          "endMs": 38800,
+          "confidence": 0.986991
+        },
+        {
+          "text": " experience",
+          "startMs": 38910,
+          "endMs": 39520,
+          "confidence": 0.999455
+        },
+        {
+          "text": ",",
+          "startMs": 39520,
+          "endMs": 39660,
+          "confidence": 0.933558
+        },
+        {
+          "text": " bringing",
+          "startMs": 39660,
+          "endMs": 40220,
+          "confidence": 0.994165
+        },
+        {
+          "text": " a",
+          "startMs": 40220,
+          "endMs": 40270,
+          "confidence": 0.997946
+        },
+        {
+          "text": " relevant",
+          "startMs": 40300,
+          "endMs": 40810,
+          "confidence": 0.997634
+        },
+        {
+          "text": " and",
+          "startMs": 40910,
+          "endMs": 41060,
+          "confidence": 0.995232
+        }
+      ]
+    },
+    {
+      "text": "realistic perspective that can help make an innovation better.",
+      "startMs": 41130,
+      "endMs": 45000,
+      "tokens": [
+        {
+          "text": " realistic",
+          "startMs": 41130,
+          "endMs": 41690,
+          "confidence": 0.99802
+        },
+        {
+          "text": " perspective",
+          "startMs": 41690,
+          "endMs": 42450,
+          "confidence": 0.996867
+        },
+        {
+          "text": " that",
+          "startMs": 42470,
+          "endMs": 42730,
+          "confidence": 0.989893
+        },
+        {
+          "text": " can",
+          "startMs": 42730,
+          "endMs": 42950,
+          "confidence": 0.998292
+        },
+        {
+          "text": " help",
+          "startMs": 42950,
+          "endMs": 43230,
+          "confidence": 0.994112
+        },
+        {
+          "text": " make",
+          "startMs": 43230,
+          "endMs": 43490,
+          "confidence": 0.994571
+        },
+        {
+          "text": " an",
+          "startMs": 43490,
+          "endMs": 43630,
+          "confidence": 0.986532
+        },
+        {
+          "text": " innovation",
+          "startMs": 43780,
+          "endMs": 44320,
+          "confidence": 0.999032
+        },
+        {
+          "text": " better",
+          "startMs": 44400,
+          "endMs": 44720,
+          "confidence": 0.999325
+        },
+        {
+          "text": ".",
+          "startMs": 44720,
+          "endMs": 44900,
+          "confidence": 0.998357
+        }
+      ]
+    },
+    {
+      "text": "It is also important to consider whose lived experience voices are",
+      "startMs": 45000,
+      "endMs": 49440,
+      "tokens": [
+        {
+          "text": " It",
+          "startMs": 45070,
+          "endMs": 45160,
+          "confidence": 0.997868
+        },
+        {
+          "text": " is",
+          "startMs": 45160,
+          "endMs": 45290,
+          "confidence": 0.991363
+        },
+        {
+          "text": " also",
+          "startMs": 45320,
+          "endMs": 45640,
+          "confidence": 0.99612
+        },
+        {
+          "text": " important",
+          "startMs": 45640,
+          "endMs": 46350,
+          "confidence": 0.999253
+        },
+        {
+          "text": " to",
+          "startMs": 46350,
+          "endMs": 46510,
+          "confidence": 0.99958
+        },
+        {
+          "text": " consider",
+          "startMs": 46510,
+          "endMs": 47140,
+          "confidence": 0.999275
+        },
+        {
+          "text": " whose",
+          "startMs": 47140,
+          "endMs": 47540,
+          "confidence": 0.778576
+        },
+        {
+          "text": " lived",
+          "startMs": 47540,
+          "endMs": 47930,
+          "confidence": 0.996776
+        },
+        {
+          "text": " experience",
+          "startMs": 47930,
+          "endMs": 48730,
+          "confidence": 0.934716
+        },
+        {
+          "text": " voices",
+          "startMs": 48730,
+          "endMs": 49200,
+          "confidence": 0.991906
+        },
+        {
+          "text": " are",
+          "startMs": 49200,
+          "endMs": 49440,
+          "confidence": 0.998517
+        }
+      ]
+    },
+    {
+      "text": "needed at each stage, from concept and design, through implementation",
+      "startMs": 49440,
+      "endMs": 53470,
+      "tokens": [
+        {
+          "text": " needed",
+          "startMs": 49440,
+          "endMs": 49820,
+          "confidence": 0.998772
+        },
+        {
+          "text": " at",
+          "startMs": 49910,
+          "endMs": 50070,
+          "confidence": 0.997421
+        },
+        {
+          "text": " each",
+          "startMs": 50070,
+          "endMs": 50340,
+          "confidence": 0.998997
+        },
+        {
+          "text": " stage",
+          "startMs": 50440,
+          "endMs": 50790,
+          "confidence": 0.999401
+        },
+        {
+          "text": ",",
+          "startMs": 50790,
+          "endMs": 51000,
+          "confidence": 0.841627
+        },
+        {
+          "text": " from",
+          "startMs": 51000,
+          "endMs": 51180,
+          "confidence": 0.879752
+        },
+        {
+          "text": " concept",
+          "startMs": 51180,
+          "endMs": 51490,
+          "confidence": 0.99868
+        },
+        {
+          "text": " and",
+          "startMs": 51490,
+          "endMs": 51530,
+          "confidence": 0.982107
+        },
+        {
+          "text": " design",
+          "startMs": 51770,
+          "endMs": 51890,
+          "confidence": 0.99959
+        },
+        {
+          "text": ",",
+          "startMs": 51910,
+          "endMs": 51930,
+          "confidence": 0.647312
+        },
+        {
+          "text": " through",
+          "startMs": 52020,
+          "endMs": 52450,
+          "confidence": 0.942875
+        },
+        {
+          "text": " implementation",
+          "startMs": 52450,
+          "endMs": 52880,
+          "confidence": 0.998169
+        }
+      ]
+    },
+    {
+      "text": "to delivery, so the innovation can have the greatest impact.",
+      "startMs": 53470,
+      "endMs": 57000,
+      "tokens": [
+        {
+          "text": " to",
+          "startMs": 53470,
+          "endMs": 53470,
+          "confidence": 0.53118
+        },
+        {
+          "text": " delivery",
+          "startMs": 53490,
+          "endMs": 54000,
+          "confidence": 0.998647
+        },
+        {
+          "text": ",",
+          "startMs": 54000,
+          "endMs": 54280,
+          "confidence": 0.860879
+        },
+        {
+          "text": " so",
+          "startMs": 54280,
+          "endMs": 54560,
+          "confidence": 0.75067
+        },
+        {
+          "text": " the",
+          "startMs": 54560,
+          "endMs": 54950,
+          "confidence": 0.936293
+        },
+        {
+          "text": " innovation",
+          "startMs": 55000,
+          "endMs": 55530,
+          "confidence": 0.983339
+        },
+        {
+          "text": " can",
+          "startMs": 55550,
+          "endMs": 55700,
+          "confidence": 0.997621
+        },
+        {
+          "text": " have",
+          "startMs": 55700,
+          "endMs": 55860,
+          "confidence": 0.998395
+        },
+        {
+          "text": " the",
+          "startMs": 56010,
+          "endMs": 56070,
+          "confidence": 0.998138
+        },
+        {
+          "text": " greatest",
+          "startMs": 56070,
+          "endMs": 56500,
+          "confidence": 0.998961
+        },
+        {
+          "text": " impact",
+          "startMs": 56500,
+          "endMs": 56800,
+          "confidence": 0.999813
+        },
+        {
+          "text": ".",
+          "startMs": 56810,
+          "endMs": 57000,
+          "confidence": 0.990425
         }
       ]
     }

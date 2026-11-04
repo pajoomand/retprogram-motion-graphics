@@ -1,42 +1,45 @@
 {
   "compositionId": "CCIHealthInnovation-S01-Slide02",
   "storyboardCompositionId": "CCIHealthInnovation-S01-Slide02-Storyboard",
-  "concept": "One continuous experience-to-contribution diagram, not nine slides. The main title stays 'Who is a consumer in this context?' throughout. Experience and innovation start separate; a dashed relationship explains that experience alone is not involvement, then becomes a solid invited contribution. Four possible contributions accumulate inside the persistent innovation workspace. Lived-experience expertise gains emphasis without a reset. Relevant voices across concept, design and implementation, and delivery extend this same system into the final state; narration finishes there, with no tenth summary. Header-free CCI tokens, icons and typography are retained. Static poses are proposed state changes, not implemented motion or narration synchronization. Awaiting human storyboard re-approval.",
+  "concept": "One continuous consumer-to-contribution story, not nine slides. The stable title asks 'Who is a consumer in this context?'. Approved Beat 1 introduces only the centered lived-experience person, relevant expertise of a health condition or issue, and inclusion of carers. Approved Beat 2 expands that same object into the established left-person/right-innovation system, retaining the patient/carer support while retiring the opening expertise descriptor. At Beat 3 the patient/carer supporting line fades as narration moves to the invited role; the core Relevant lived experience label and person persist throughout. Other layouts remain unchanged: solid invitation, cumulative contributions, expertise and relevant voices across stages. No tenth summary. User approved the opening and this supporting-text behaviour on 2026-11-03. Narration retiming to the selected replacement recording is not yet complete.",
   "framesPerBeat": 60,
   "beats": [
     {
-      "name": "Experience and innovation are distinct",
+      "name": "Introduce the consumer concept",
       "narrationCue": "In this course, consumers are people with relevant lived experience and expertise of a health condition or issue, including carers, who contribute their knowledge and perspectives to inform and shape innovation.",
-      "visual": "Header-free paper canvas with no top eyebrow/banner. Stable 74 px navy title 'Who is a consumer in this context?' begins at y=72, with the supporting concept at y=177. The whole diagram moves up 50 px; the peach innovation workspace is 440 px high with more generous 72 px contribution-row spacing. The mint lived-experience node and icon are slightly larger. These separate anchors face each other across an empty gap. The workspace's lightbulb and 'Innovation in development' identity are already visible. No connection or contribution rows yet; no additional copy is introduced.",
-      "purpose": "Establish distinct concepts before explaining the deliberate relationship between experience and involvement. The opening narration previews the definition; the visual does not imply automatic membership.",
-      "transitionIntention": "Keep title, person, workspace and identity anchored. Introduce a dashed relationship in the existing gap as the narration distinguishes experience from involvement.",
-      "persists": "Initial state establishes the single teaching title, relevant-lived-experience node, patient/carer label, peach workspace and Innovation in development identity for the whole clip.",
-      "addsOrChanges": "Introduce the two separate conceptual anchors and an empty shared workspace.",
-      "attentionTarget": "The spatial separation between relevant experience and innovation.",
+      "visual": "Header-free paper canvas with the unchanged 74 px navy title 'Who is a consumer in this context?' at y=72. Center the existing mint circle at canvas (960, 540), radius 128, with the existing 116 px patient/carer icon. Center supporting labels beneath it: Relevant lived experience (29 px semibold), Expertise of a health condition or issue (25 px), Including patients and carers (24 px). The relationship support line, innovation workspace/identity, connector and contributions are not yet visible. No extra banner or card.",
+      "purpose": "Let learners understand the consumer/lived-experience concept, relevant health-condition or issue expertise, and inclusion of carers before interpreting a relationship with innovation. Narration carries the full definition.",
+      "transitionIntention": "After re-approval and fresh narration analysis, gently move the same mounted circle/icon and its established labels from center to the existing left position, without scale change, sweep, bounce or reset. Then fade/settle in the right workspace with negligible travel; introduce the dashed relationship after the anchors settle. Keep the title fixed. This is a staged expansion of one concept, not simultaneous title/layout/object replacement; exact timing is not yet established for the selected recording.",
+      "persists": "Establish the single teaching title, existing lived-experience circle/icon, Relevant lived experience label and Including patients and carers label. Preserve those same visual objects into Beat 2.",
+      "addsOrChanges": "Introduce only the consumer concept at screen center and one concise introductory expertise descriptor. Defer the relationship support line and all innovation elements to Beat 2.",
+      "attentionTarget": "The consumer's relevant lived experience and expertise, including carers.",
       "removes": []
     },
     {
       "name": "Experience alone is not involvement",
       "narrationCue": "Being a patient or carer gives someone experience, but it does not automatically mean they are being involved in developing an innovation.",
-      "visual": "Both anchored objects and the main title remain unchanged. A dashed teal line spans the gap, labelled locally 'Experience alone ≠ involvement'. The incomplete line denotes a relationship not yet established, not a failed or unqualified person. No contribution rows appear.",
+      "visual": "Settled state matches the established two-part system: same mint circle now at canvas (360, 495), same icon and patient/carer labels, peach innovation workspace at x=1030, y=280, 740 by 440 px, with lightbulb and Innovation in development. Restore the existing relationship support line below the unchanged main title. A dashed teal connection spans the gap with Experience alone ≠ involvement. No contribution rows yet. Beat 2 is the only purposeful relocation; anchors stay fixed from here onward.",
       "purpose": "Make the distinction explicit with both the broken relationship and a complete local phrase; do not rely on Not automatic alone.",
-      "transitionIntention": "Transform this same dashed line into a solid line when the invited role is spoken; replace only its explanatory label.",
-      "persists": "Main title, experience node and labels, workspace, lightbulb and Innovation in development identity remain at identical positions. No top eyebrow or banner is present.",
-      "addsOrChanges": "Add the dashed connector and the precise local distinction Experience alone ≠ involvement.",
+      "transitionIntention": "Transform this same dashed line into a solid line when the invited role is spoken. Retire Including patients and carers with a restrained fade as narration moves beyond identifying consumers; keep the person/icon, core Relevant lived experience label and anchor unchanged.",
+      "persists": "The same mounted consumer circle/icon, Relevant lived experience and Including patients and carers labels, and unchanged main title. After the opening expansion, both anchors remain in their established positions through Beats 3-9.",
+      "addsOrChanges": "Move the existing person and labels gently from center to left; introduce the right workspace/identity and relationship support line, then the dashed connector and Experience alone ≠ involvement. Stage these changes so the learner follows one attention shift at a time.",
       "attentionTarget": "The broken connection and its local relationship label.",
-      "removes": []
+      "removes": [
+        { "element": "Opening-only Expertise of a health condition or issue descriptor", "reason": "The opening definition has been established by narration. Retire only this introductory supporting line to restore the existing compact node labels and approved relationship layout; preserve circle/icon and both established labels unchanged. Beat 8 later emphasizes the same expertise with its unchanged three-line callout." }
+      ]
     },
     {
       "name": "An invitation establishes the contribution",
       "narrationCue": "What matters here is the role they are being invited to play:",
-      "visual": "The dashed connector is now solid teal in the same position, labelled 'Invited to contribute'. The unchanged node and workspace remain connected from this point onwards; the title and Innovation in development identity do not change.",
+      "visual": "The dashed connector is now solid teal in the same position, labelled 'Invited to contribute'. The unchanged node and workspace remain connected from this point onwards; the title and Innovation in development identity do not change. Relevant lived experience stays visible. Including patients and carers has faded out; its mounted text reserves the same space without moving the core label or node.",
       "purpose": "The visual change from broken to solid communicates the invited role, rather than a new slide or a personal qualification.",
       "transitionIntention": "Hold the established connection; begin adding possible contributions within the existing workspace.",
-      "persists": "All anchored objects, the same connector component, title, labels and innovation identity.",
-      "addsOrChanges": "Change the connector's dashed stroke to solid and its label to Invited to contribute.",
+      "persists": "All anchored objects, the same connector component, title, core Relevant lived experience label and innovation identity. Patient/carer support remains mounted but no longer visible after its fade.",
+      "addsOrChanges": "Change the connector's dashed stroke to solid and its label to Invited to contribute. Gently fade the patient/carer supporting line as narration shifts to the invited role; do not move or rewrite the core identity.",
       "attentionTarget": "The now-established contribution relationship.",
       "removes": [
-        { "element": "Experience alone ≠ involvement label and dashed stroke treatment", "reason": "The same relationship now represents an explicit invitation; replace its state/label rather than removing and recreating its component." }
+        { "element": "Experience alone ≠ involvement label and dashed stroke treatment", "reason": "The same relationship now represents an explicit invitation; replace its state/label rather than removing and recreating its component." },
+        { "element": "Including patients and carers supporting line (visible treatment only)", "reason": "The narration has moved from identifying patients/carers to the role they are invited to play. Its instructional purpose is complete; fade the supporting line without unmounting it or changing the consumer's core identity, meaning, label or visual anchor. Do not reintroduce it in later beats." }
       ]
     },
     {
@@ -45,7 +48,7 @@
       "visual": "The main title and complete connected system stay unchanged. Add one small magnifier icon and the short label Understand a need in the first reserved row inside the peach workspace, beneath its persistent identity. Later rows remain unoccupied, not placeholder bullets.",
       "purpose": "Show one possible contribution of relevant lived experience within the team's ongoing work.",
       "transitionIntention": "Keep this row while adding the next contribution below it; no replacement illustration or heading.",
-      "persists": "Main title, experience node, patient/carer label, solid connector and Invited to contribute label, workspace and Innovation in development identity.",
+      "persists": "Main title, experience node and core Relevant lived experience label, solid connector and Invited to contribute label, workspace and Innovation in development identity. The retired patient/carer supporting line stays transparent.",
       "addsOrChanges": "Add the magnifier and Understand a need row inside the workspace.",
       "attentionTarget": "The newly added first contribution row.",
       "removes": []

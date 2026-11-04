@@ -58,6 +58,9 @@ and applicable installed Remotion Agent Skills.
   at a time. Retain safe-area clearance and readable labels. Hold the final
   resolved state long enough for comprehension.
 - Do not add a persistent top banner/eyebrow without essential learning value.
+- Supporting text may retire with a restrained frame-driven fade when narration
+  moves beyond its instructional purpose, not merely to simplify a frame.
+  Follow its documented Removes reason; preserve core identity, meaning and anchor.
   Prefer the recovered vertical space for the main explainer diagram.
 - Continue the shared RETProgram theme, typography, contrast, spacing, and
   vector language. Keep course-specific content local to its scene.

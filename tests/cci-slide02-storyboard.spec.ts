@@ -57,7 +57,7 @@ test("Slide 2 storyboard is static, legible and preserves its human approval sta
     "[data-persistent='experience'], [data-persistent='connector'], [data-persistent='workspace']",
   ).evaluateAll((elements) => elements.map((element) =>
     ["cx", "cy", "r", "x", "y", "width", "height", "d"].map((attribute) => element.getAttribute(attribute))));
-  const initialGeometry = await anchorGeometry();
+  let relationshipGeometry: Awaited<ReturnType<typeof anchorGeometry>> | undefined;
   for (const [index, pose] of slide02Poses.entries()) {
     const start = index * manifest.framesPerBeat;
     await seek(start);
@@ -71,6 +71,27 @@ test("Slide 2 storyboard is static, legible and preserves its human approval sta
     await expect(activePose.locator("[data-cci-eyebrow]")).toHaveCount(0);
     await expect(activePose.locator("[data-cci-text='slide02-title']")).toHaveText("Who is a consumer in this context?");
     await expect(activePose.locator("[data-persistent='innovation-identity']")).toHaveText("Innovation in development");
+    await expect(activePose.locator("[data-persistent='workspace']")).toBeVisible({ visible: index > 0 });
+    await expect(activePose.locator("[data-persistent='innovation-identity']")).toBeVisible({ visible: index > 0 });
+    await expect(activePose.locator("[data-opening-expertise]")).toHaveCount(index === 0 ? 1 : 0);
+    await expect(activePose.locator("[data-patient-carer-support]")).toHaveText("Including patients and carers");
+    await expect(activePose.locator("[data-patient-carer-support]")).toHaveCSS("opacity", index < 2 ? "1" : "0");
+    await expect(activePose.locator("[data-persistent='experience-labels']").getByText("Relevant lived experience", { exact: true })).toBeVisible();
+    if (index === 0) {
+      await expect(activePose.getByText("Expertise of a health condition or issue", { exact: true })).toBeVisible();
+      await expect(activePose.getByText("Relevant lived experience + a role in informing and shaping the work", { exact: true })).toBeHidden();
+    }
+    const consumerCenter = await activePose.locator("[data-persistent='experience']").evaluate((element) => {
+      const bounds = element.closest("[data-slide02-pose]")!.getBoundingClientRect();
+      const scale = bounds.width / 1920;
+      const circle = element.getBoundingClientRect();
+      return {
+        x: (circle.left + circle.width / 2 - bounds.left) / scale,
+        y: (circle.top + circle.height / 2 - bounds.top) / scale,
+      };
+    });
+    expect(consumerCenter.x).toBeCloseTo(index === 0 ? 960 : 360, 0);
+    expect(consumerCenter.y).toBeCloseTo(index === 0 ? 540 : 495, 0);
     const connection = activePose.locator("[data-persistent='connector']");
     await expect(connection).toHaveAttribute("data-connection", index === 0 ? "absent" : index === 1 ? "dashed" : "solid");
     if (index === 0) await expect(connection).toHaveAttribute("visibility", "hidden");
@@ -86,8 +107,10 @@ test("Slide 2 storyboard is static, legible and preserves its human approval sta
       }
     }
     await expect(activePose.locator("[data-expertise]")).toBeVisible({ visible: index >= 7 });
-    expect(await anchorGeometry()).toEqual(initialGeometry);
-    await expect(activePose.locator("[data-workspace-content]")).toHaveCSS("opacity", index === 7 ? "0.78" : "1");
+    if (index === 1) relationshipGeometry = await anchorGeometry();
+    if (index > 1) expect(await anchorGeometry()).toEqual(relationshipGeometry);
+    await expect(activePose.locator("[data-workspace-content]")).toHaveCSS("opacity",
+      index === 0 ? "0" : index === 7 ? "0.78" : "1");
     if (index >= 7) {
       const callout = activePose.locator("[data-expertise]");
       await expect(callout).toHaveCSS("left", "580px");

@@ -117,6 +117,42 @@ appearance is intentionally unchanged.
 
 ### CCI Slide 2 narration-led production
 
+**Current stage: human video approval recorded and final export completed (2026-11-03).**
+The user explicitly requested final export of the review clip. The validated
+MP4, WebVTT and transcript are under `out/exports/CCIHealthInnovation-S01-Slide02.*`;
+the MP4 is byte-identical to the approved review. This does not constitute
+human transcript/timing or medical-content approval.
+Technical QA passed, with six static-screening warnings retained for review.
+Beat 1 introduces
+only the centered consumer circle/icon, relevant lived experience, health-condition
+or issue expertise, and inclusion of carers. Beat 2 expands that same object into
+the established left-person/right-workspace relationship with the dashed
+distinction. Keep patient/carer support through Beat 2, then fade it as the
+Beat 3 narration moves to the invited role. The core Relevant lived experience
+label and consumer anchor remain unchanged. Other later-beat layouts remain
+unchanged. Follow the
+[opening production plan](src/courses/cci-health-innovation/section-01-slide-02/storyboard.md#opening-production-plan).
+Production enables that approved opening and uses fresh timing from the selected
+recording. Technical QA and separate human video approval remain required.
+The user selected the approximately 57.313 s replacement narration at the
+original upload path. Native decoding measures **57.312653 seconds**, or
+**1720 frames / 57.333333 seconds** at 30 fps. Current canonical captions
+contain 24 cues with the replacement master hash. They require human transcript
+and timing review. The old 59.167-second media/captions/analysis are preserved
+under `out/slide02-production/before-replacement-master/`.
+
+The current opening travels center-to-left over 42 frames at Beat 2, then stages
+the workspace and dashed relationship. Patient/carer support retires at the
+Beat 3 invitation cue over 18 frames. Contributions accumulate at frames 737,
+802, 849 and 886. Expertise starts at 955 and the final voices state at 1368.
+Stage reveals are 1535, 1553 and 1613; the completed final state holds 89 frames
+(2.967 seconds). See the current timing map for evidence and qualifications.
+
+#### Historical production notes (superseded master and opening)
+
+The 59.167 s production details
+below describe the historical preview, not the revised opening or new audio.
+
 The [Slide 2 proposal](src/courses/cci-health-innovation/section-01-slide-02/storyboard.md)
 uses one evolving experience-to-contribution connection to distinguish having
 relevant lived experience from an invited role in informing/shaping innovation.
@@ -154,9 +190,14 @@ Review `out/storyboards/CCIHealthInnovation-S01-Slide02/storyboard.png` and
 `storyboard.md`, or select `CCIHealthInnovation-S01-Slide02-Storyboard` in
 Studio. Approval and production start were recorded following the user's
 explicit decision on 2026-11-02, including the authorized final minor label/list
-refinements. **Production is now paused for human storyboard re-approval** of the
-latest spacing and three-line callout continuity correction. Do not run full-motion
-QA or resume animation until the user approves that revised storyboard.
+refinements. **The final spacing and three-line callout revision was explicitly
+approved on 2026-11-02; clip production and a source push are authorized.**
+That approval has since been superseded by the consumer-first opening request.
+Previous PNGs/status are archived under
+`out/slide02-opening-review/before-consumer-first/`; regenerated outputs subsequently received explicit human storyboard approval
+in `production-status.json` on 2026-11-03. Do not regenerate those hash-bound
+approved artifacts during motion implementation.
+Run production QA, then await separate human video approval before final export.
 Original artifacts are retained
 under `out/slide02-continuity-review/previous-storyboard/`.
 Do not regenerate approved storyboard outputs during motion work: they are
@@ -554,6 +595,12 @@ but the established component itself should remain semantically and visually
 consistent unless the storyboard explicitly calls for a content change.**
 
 ### Continuity and cognitive-load approval checklist
+
+Supporting explanatory text may retire after its instructional purpose is
+complete, while the component's core identity, meaning and visual anchor persist.
+The narration must clearly have moved beyond that supporting idea; a tidier
+frame alone is not a reason. Document the retirement in `Removes` and use a
+restrained fade rather than an abrupt disappearance.
 
 Follow the [13 production rules](./AGENTS.md#storyboard-continuity-and-cognitive-load-review).
 Assess the storyboard as one evolving sequence, not only individual stills:

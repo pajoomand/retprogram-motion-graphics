@@ -1,4 +1,23 @@
 {
-  "state": "awaiting-storyboard-approval",
-  "storyboardHash": "42f417893eb788deec9d9408f200036599a1537bc8dba78c8c5de1bfeb8a862d"
+  "state": "approved",
+  "storyboardHash": "5989518c9ab004afbc1ca8658267cf7f933f46d4b1c1fe9c7c1aedb3b4bd49f9",
+  "storyboardApproval": {
+    "reviewer": "pajoomand",
+    "notes": "User approved revised Beats 1 and 2 and specified supporting-text behaviour: both definition lines in Beat 1; retain patients and carers in Beat 2; restrained retirement at Beat 3 as narration moves to the invited role. Preserve core identity and all other approved structure. Replacement-master retiming remains outstanding.",
+    "hash": "5989518c9ab004afbc1ca8658267cf7f933f46d4b1c1fe9c7c1aedb3b4bd49f9",
+    "approvedAt": "2026-11-03T05:15:26.657Z"
+  },
+  "videoReview": {
+    "directory": "out/qa/CCIHealthInnovation-S01-Slide02/2026-11-03T06-27-12-473Z-44272",
+    "hash": "8688955c06c534ed15a4eb3b7ea2da27c5cde7376d008c679332f6015ca6af99",
+    "sourceHash": "d0c98e4d43dba7fc6a96126028453816317c07e672c3043a56152f99bc2ea4ec"
+  },
+  "videoApproval": {
+    "directory": "out/qa/CCIHealthInnovation-S01-Slide02/2026-11-03T06-27-12-473Z-44272",
+    "hash": "8688955c06c534ed15a4eb3b7ea2da27c5cde7376d008c679332f6015ca6af99",
+    "sourceHash": "d0c98e4d43dba7fc6a96126028453816317c07e672c3043a56152f99bc2ea4ec",
+    "reviewer": "pajoomand",
+    "notes": "User explicitly instructed \"proceed with final export\" after receiving the review clip and its download location. This authorizes final video export; no claim of human transcript or medical-content approval is made. Six static-screening warnings remain documented.",
+    "approvedAt": "2026-11-03T06:40:48.053Z"
+  }
 }

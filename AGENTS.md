@@ -67,6 +67,11 @@ Do not start by building the entire video. First provide the proposed visual dir
   exit and re-enter. Evolve their state/content without keying the whole scene
   by beat. Reuse this same component structure in storyboard and production.
 - Build enumerated ideas cumulatively where screen space permits.
+- Supporting explanatory text may retire once its instructional purpose has
+  been completed without violating component persistence, provided the core
+  identity, meaning and visual anchor remain unchanged. Retire it only when
+  narration clearly moves beyond the idea it supports, not merely to simplify
+  a frame. Document the reason in `Removes` and use a restrained fade.
 - When a persistent component carries established information across consecutive
   beats, do not alter its wording, internal structure or content merely to
   accommodate a new beat. Attention may shift through opacity, contrast or
@@ -224,10 +229,30 @@ FULL MOTION IMPLEMENTATION -> QA -> HUMAN VIDEO APPROVAL -> FINAL OUTPUT.
   final Beat 9 refinements: 32 px stage labels and 60% contribution-list opacity.
   Storyboard and production reuse `ContributionStory`; never restore the recap
   or changing headings. Human video approval remains a separate required gate.
-- The latest Slide 2 correction pauses that production authorization: regenerate
-  storyboard evidence with 30 px more space below the final question and the
-  identical full three-line expertise callout across Beats 8-9. Await human
-  storyboard re-approval; do not resume animation or full-motion QA yet.
+- The user approved the final Slide 2 storyboard on 2026-11-02 and explicitly
+  requested clip production and a source push. Preserve the final 34 px
+  question-to-icons clearance, unchanged upper composition, and identical full
+  three-line expertise callout across Beats 8-9. Preserve approved storyboard
+  evidence; run production QA and stop for separate human video approval.
+- On 2026-11-03 the user requested a revised consumer-first Slide 2 opening and
+  a review stop: Beat 1 centers only the consumer concept; Beat 2 expands it into
+  the established relationship, with Beats 3-9 otherwise unchanged. The prior
+  production authorization is paused pending opening storyboard re-approval.
+  The approximately 57.313 s replacement recording at the original upload path
+  is the selected new master; older course-package timing/captions are historical.
+  Do not claim retiming is complete or resume full production/QA before approval.
+- The user subsequently approved Beats 1-2 and supporting-text behaviour on
+  2026-11-03. Keep both supporting lines in Beat 1, retain patient/carer support
+  in Beat 2, and fade that supporting line at the Beat 3 invited-role cue.
+  Preserve the core Relevant lived experience label, identity and anchor.
+  Record this approval against regenerated artifacts; replacement-master
+  timing/captions and full production validation remain outstanding.
+- The user then confirmed storyboard approval and requested the clip. The
+  approved consumer-first opening is now enabled in production. The selected
+  master decodes to 2,527,488 / 44,100 seconds (57.312653 s), with 1720 frames
+  at 30 fps and 24 canonical caption cues. Current phrase timing is documented
+  in the package timing map; older production notes above are historical.
+  Run full QA and stop for separate human video approval, not final export.
 
 ## Full-motion automated video QA
 
@@ -302,3 +327,25 @@ FULL MOTION IMPLEMENTATION -> QA -> HUMAN VIDEO APPROVAL -> FINAL OUTPUT.
 - Export only into ignored output directories such as `out/` or `renders/`.
   Never delete existing renders or assets to make a repository appear clean.
 - Use Windows CMD commands for local workflows; do not use PowerShell.
+
+## HyperFrames and Remotion
+
+- Keep the existing Remotion project, compositions, media, root dependencies,
+  storyboards, and production approval workflows intact. Remotion remains the
+  canonical path for established productions and all currently approved videos.
+- Use the separate `hyperframes/` workspace only for explicitly requested,
+  opt-in HyperFrames experiments or future productions authorized for that
+  framework. Do not register its compositions in `src/Root.tsx` or add
+  HyperFrames dependencies to the repository root.
+- Before creating or modifying a HyperFrames composition, read
+  `hyperframes/AGENTS.md` and the installed `/hyperframes` skill, then consult
+  the relevant HyperFrames CLI references. Follow the local workflow in
+  `hyperframes/README.md`.
+- A framework experiment does not authorize changes to approved scientific
+  content, scripts, storyboards, narration, captions, or visual approvals.
+  Keep course content distinct, label provisional material, and preserve the
+  existing storyboard and video approval gates.
+- Run HyperFrames lint/check and inspect preview snapshots before rendering.
+  Validate rendered MP4 dimensions, frame rate, duration, and decodability
+  with FFprobe/FFmpeg. Technical checks do not constitute human visual
+  approval. Keep HyperFrames output under its ignored workspace output folders.

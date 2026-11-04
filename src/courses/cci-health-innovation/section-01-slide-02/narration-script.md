@@ -9,7 +9,8 @@ supplied temporary Slide 2 narration for production timing. See
 [timing-map.md](./timing-map.md) and [audio-analysis.json](./audio-analysis.json).
 Sidecar captions follow local machine transcription of that recording;
 they require human review. The recorded ending differs from the draft
-("it has the greatest impact" versus "it can have the greatest impact/effect").
+The selected replacement recording ends "so the innovation can have the greatest
+impact" and contains other wording differences documented in the audio analysis.
 Do not silently rewrite this source or substitute Slide 1 audio.
 
 ## On screen

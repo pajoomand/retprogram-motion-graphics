@@ -50,6 +50,10 @@ repository's [production brief](../AGENTS.md) and [shared design system](../READ
   than adding a redundant summary without a narration need.
 - Omit persistent top banners/eyebrows unless they add essential learning
   value. Use the recovered space for the main diagram, not additional text.
+- Supporting explanatory text may retire with a restrained fade only when
+  narration has clearly moved beyond its instructional purpose. Document the
+  reason in Removes; preserve the component's core identity, meaning and visual
+  anchor. Do not remove supporting text merely to simplify a frame.
 - Apply all [continuity and cognitive-load rules](../AGENTS.md#storyboard-continuity-and-cognitive-load-review)
   and complete the [sequence review checklist](../README.md#continuity-and-cognitive-load-approval-checklist).
   Preserve persistent components' wording, meaning, internal layout and animation

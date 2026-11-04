@@ -77,8 +77,8 @@ export const RemotionRoot: React.FC = () => {
           schema={slide02PropsSchema}
           defaultProps={{
             sceneDurations: {
-              definition: 410, separate: 236, invited: 111, need: 68, assumption: 46,
-              options: 35, decision: 62, expertise: 438, voices: 370,
+              definition: 412, separate: 227, invited: 98, need: 65, assumption: 47,
+              options: 37, decision: 69, expertise: 413, voices: 352,
             },
             narrationSrc: "courses/cci-health-innovation/section-01-slide-02/s01-slide02-temp-narration.mp3",
             captionSrc: "courses/cci-health-innovation/section-01-slide-02/closed-captions.json",

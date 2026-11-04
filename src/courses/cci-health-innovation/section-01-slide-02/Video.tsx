@@ -11,7 +11,7 @@ const NarrationLedDiagram = ({ timing }: { timing: Slide02Timing }) => {
   const index = timing.scenes.findIndex((scene) => frame >= scene.from && frame < scene.end);
   const scene = timing.scenes[index];
   if (!scene) throw new Error(`Slide 2 has no visual state at frame ${frame}.`);
-  return <ContributionStory state={scene.pose} motion={{ frame, timing }} />;
+  return <ContributionStory state={scene.pose} motion={{ frame, timing }} consumerFirstOpening />;
 };
 
 export const CciSlide02 = (props: Slide02Props) => {
